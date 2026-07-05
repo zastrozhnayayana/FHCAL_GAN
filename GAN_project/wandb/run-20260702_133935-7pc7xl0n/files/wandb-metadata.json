@@ -1,0 +1,36 @@
+{
+  "os": "Linux-6.6.122+-x86_64-with-glibc2.35",
+  "python": "CPython 3.12.13",
+  "startedAt": "2026-07-02T13:39:35.314516Z",
+  "program": "my_gan_central_modules.ipynb",
+  "codePath": "my_gan_central_modules.ipynb",
+  "email": "elleth956428@gmail.com",
+  "root": "/content/drive/MyDrive/GAN_project",
+  "host": "37bbf31cf5b8",
+  "executable": "/usr/bin/python3",
+  "colab": "https://colab.research.google.com/notebook#fileId=1M7z_8-2IW6-mD8HVRHKBkrKbbZNHKM-D",
+  "cpu_count": 1,
+  "cpu_count_logical": 2,
+  "gpu": "Tesla T4",
+  "gpu_count": 1,
+  "disk": {
+    "/": {
+      "total": "120942624768",
+      "used": "56344170496"
+    }
+  },
+  "memory": {
+    "total": "13605822464"
+  },
+  "gpu_nvidia": [
+    {
+      "name": "Tesla T4",
+      "memoryTotal": "16106127360",
+      "cudaCores": 2560,
+      "architecture": "Turing",
+      "uuid": "GPU-9f0e229d-72f6-6cbe-d22a-04e4d48587f0"
+    }
+  ],
+  "cudaVersion": "13.0",
+  "writerId": "xdceax7b1zkv44dpf9wuwq2i44jh4f9w"
+}

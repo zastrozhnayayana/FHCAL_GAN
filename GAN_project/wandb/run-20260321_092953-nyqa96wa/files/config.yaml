@@ -1,0 +1,49 @@
+_wandb:
+    value:
+        cli_version: 0.25.1
+        e:
+            bfk29pn7m5omehwkoadd54stol2mgdfh:
+                codePath: my_gan.ipynb
+                colab: https://colab.research.google.com/notebook#fileId=1wnjpelULXRD6GKyFX1sOi7txYt2pAso-
+                cpu_count: 1
+                cpu_count_logical: 2
+                disk:
+                    /:
+                        total: "115658190848"
+                        used: "29114130432"
+                email: elleth956428@gmail.com
+                executable: /usr/bin/python3
+                host: ba2fdaa58171
+                memory:
+                    total: "13605851136"
+                os: Linux-6.6.113+-x86_64-with-glibc2.35
+                program: my_gan.ipynb
+                python: CPython 3.12.13
+                root: /content/drive/MyDrive/GAN_project
+                startedAt: "2026-03-21T09:29:53.324253Z"
+                writerId: bfk29pn7m5omehwkoadd54stol2mgdfh
+        m: []
+        python_version: 3.12.13
+        t:
+            "1":
+                - 1
+                - 5
+                - 41
+                - 53
+                - 105
+            "2":
+                - 1
+                - 5
+                - 41
+                - 53
+                - 105
+            "3":
+                - 2
+                - 13
+            "4": 3.12.13
+            "5": 0.25.1
+            "8":
+                - 1
+                - 12
+            "12": 0.25.1
+            "13": linux-x86_64

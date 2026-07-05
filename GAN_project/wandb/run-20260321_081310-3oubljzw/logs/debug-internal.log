@@ -1,0 +1,19 @@
+{"time":"2026-03-21T08:13:10.731056647Z","level":"INFO","msg":"wandb-core"}
+{"time":"2026-03-21T08:13:10.7440459Z","level":"INFO","msg":"stream: starting","core version":"0.25.1"}
+{"time":"2026-03-21T08:13:10.970945314Z","level":"INFO","msg":"stream: created new stream","id":"3oubljzw"}
+{"time":"2026-03-21T08:13:10.971436747Z","level":"INFO","msg":"handler: started"}
+{"time":"2026-03-21T08:13:10.986149034Z","level":"INFO","msg":"stream: started"}
+{"time":"2026-03-21T08:13:10.986434596Z","level":"INFO","msg":"writer: started","stream_id":"3oubljzw"}
+{"time":"2026-03-21T08:13:10.986509753Z","level":"INFO","msg":"sender: started"}
+{"time":"2026-03-21T08:13:16.937096752Z","level":"INFO","msg":"filestream: sending request","total_files":1,"console_offset":0,"console_lines":1}
+{"time":"2026-03-21T08:13:17.378706255Z","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-03-21T08:13:31.945356563Z","level":"INFO","msg":"filestream: sending request","total_files":2,"events_offset":0,"events_lines":1,"console_offset":1,"console_lines":444,"uploaded_len":2}
+{"time":"2026-03-21T08:13:32.238576303Z","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-03-21T08:13:45.558022016Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-21T08:13:45.561577371Z","level":"INFO","msg":"filestream: sending request","total_files":2,"console_offset":445,"console_lines":400,"uploaded_len":3,"complete":true,"exit_code":0}
+{"time":"2026-03-21T08:13:45.747223183Z","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-03-21T08:13:45.751218566Z","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2026-03-21T08:13:45.770456054Z","level":"INFO","msg":"stream: closing"}
+{"time":"2026-03-21T08:13:45.771013091Z","level":"INFO","msg":"handler: closed"}
+{"time":"2026-03-21T08:13:45.777956774Z","level":"INFO","msg":"sender: closed"}
+{"time":"2026-03-21T08:13:45.778107938Z","level":"INFO","msg":"stream: closed"}

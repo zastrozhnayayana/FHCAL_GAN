@@ -1,0 +1,56 @@
+_wandb:
+    value:
+        cli_version: 0.26.1
+        e:
+            cclhl7gbomuhuyj47oj91wgax87y07b7:
+                codePath: my_gan.ipynb
+                colab: https://colab.research.google.com/notebook#fileId=1wnjpelULXRD6GKyFX1sOi7txYt2pAso-
+                cpu_count: 1
+                cpu_count_logical: 2
+                cudaVersion: "13.0"
+                disk:
+                    /:
+                        total: "120942624768"
+                        used: "52638334976"
+                email: elleth956428@gmail.com
+                executable: /usr/bin/python3
+                gpu: Tesla T4
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Turing
+                      cudaCores: 2560
+                      memoryTotal: "16106127360"
+                      name: Tesla T4
+                      uuid: GPU-89778f23-a31c-7ad6-270f-554deed8dbf7
+                host: cd44ac031435
+                memory:
+                    total: "13605826560"
+                os: Linux-6.6.113+-x86_64-with-glibc2.35
+                program: my_gan.ipynb
+                python: CPython 3.12.13
+                root: /content/drive/MyDrive/GAN_project
+                startedAt: "2026-05-01T15:50:02.018742Z"
+                writerId: cclhl7gbomuhuyj47oj91wgax87y07b7
+        m: []
+        python_version: 3.12.13
+        t:
+            "1":
+                - 1
+                - 5
+                - 41
+                - 53
+            "2":
+                - 1
+                - 5
+                - 41
+                - 53
+            "3":
+                - 2
+                - 13
+            "4": 3.12.13
+            "5": 0.26.1
+            "8":
+                - 1
+                - 12
+            "12": 0.26.1
+            "13": linux-x86_64

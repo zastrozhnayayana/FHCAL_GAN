@@ -1,0 +1,24 @@
+{
+  "os": "Linux-6.6.122+-x86_64-with-glibc2.35",
+  "python": "CPython 3.12.13",
+  "startedAt": "2026-06-23T14:14:46.945652Z",
+  "program": "my_gan.ipynb",
+  "codePath": "my_gan.ipynb",
+  "email": "elleth956428@gmail.com",
+  "root": "/content/drive/MyDrive/GAN_project",
+  "host": "3596d53e3573",
+  "executable": "/usr/bin/python3",
+  "colab": "https://colab.research.google.com/notebook#fileId=1wnjpelULXRD6GKyFX1sOi7txYt2pAso-",
+  "cpu_count": 1,
+  "cpu_count_logical": 2,
+  "disk": {
+    "/": {
+      "total": "115658190848",
+      "used": "28019650560"
+    }
+  },
+  "memory": {
+    "total": "13605830656"
+  },
+  "writerId": "vcltxa5bfvh8sosrq3rcofvpg1gmaox8"
+}

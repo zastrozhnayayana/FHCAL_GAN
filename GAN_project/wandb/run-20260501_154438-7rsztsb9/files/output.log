@@ -1,0 +1,11 @@
+100%|██████████| 206/206 [00:18<00:00, 11.12it/s]
+  Средний loss критика: -0.0001
+  Средний loss генератора: 0.0001
+  Grad norm критика: 0.0187
+  Grad norm генератора: 0.0017
+  D(real) среднее: -0.0353
+  D(fake) среднее: -0.0355
+  loss: 0.0001
+/content/drive/MyDrive/GAN_project/pipeline/physical_metrics/calogan_metrics.py:32: RuntimeWarning: invalid value encountered in divide
+  assym = (np.sum(imgs * zz, axis=(1, 2)) -
+1it [00:14, 14.06s/it]

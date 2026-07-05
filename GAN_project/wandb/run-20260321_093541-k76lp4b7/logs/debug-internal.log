@@ -1,0 +1,33 @@
+{"time":"2026-03-21T09:35:41.986736882Z","level":"INFO","msg":"wandb-core"}
+{"time":"2026-03-21T09:35:41.993388522Z","level":"INFO","msg":"stream: starting","core version":"0.25.1"}
+{"time":"2026-03-21T09:35:42.164940525Z","level":"INFO","msg":"stream: created new stream","id":"k76lp4b7"}
+{"time":"2026-03-21T09:35:42.165366218Z","level":"INFO","msg":"handler: started"}
+{"time":"2026-03-21T09:35:42.174929758Z","level":"INFO","msg":"stream: started"}
+{"time":"2026-03-21T09:35:42.1749862Z","level":"INFO","msg":"writer: started","stream_id":"k76lp4b7"}
+{"time":"2026-03-21T09:35:42.175024152Z","level":"INFO","msg":"sender: started"}
+{"time":"2026-03-21T09:35:43.544809595Z","level":"INFO","msg":"filestream: sending request","total_files":1,"console_offset":0,"console_lines":1}
+{"time":"2026-03-21T09:35:43.89959248Z","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-03-21T09:35:58.545225254Z","level":"INFO","msg":"filestream: sending request","total_files":2,"events_offset":0,"events_lines":1,"console_offset":0,"console_lines":1,"uploaded_len":2}
+{"time":"2026-03-21T09:35:58.698758803Z","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-03-21T09:36:13.545207373Z","level":"INFO","msg":"filestream: sending request","total_files":2,"events_offset":1,"events_lines":1,"console_offset":0,"console_lines":1}
+{"time":"2026-03-21T09:36:13.769636372Z","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-03-21T09:36:28.545124088Z","level":"INFO","msg":"filestream: sending request","total_files":2,"events_offset":2,"events_lines":1,"console_offset":0,"console_lines":1}
+{"time":"2026-03-21T09:36:28.722641948Z","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-03-21T09:36:43.545548719Z","level":"INFO","msg":"filestream: sending request","total_files":2,"events_offset":3,"events_lines":1,"console_offset":0,"console_lines":1}
+{"time":"2026-03-21T09:36:43.74323507Z","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-03-21T09:36:58.545382437Z","level":"INFO","msg":"filestream: sending request","total_files":2,"events_offset":4,"events_lines":1,"console_offset":0,"console_lines":1}
+{"time":"2026-03-21T09:36:58.734627186Z","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-03-21T09:37:13.545109854Z","level":"INFO","msg":"filestream: sending request","total_files":2,"events_offset":5,"events_lines":1,"console_offset":0,"console_lines":1}
+{"time":"2026-03-21T09:37:13.732421644Z","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-03-21T09:37:28.546418907Z","level":"INFO","msg":"filestream: sending request","total_files":2,"events_offset":6,"events_lines":1,"console_offset":0,"console_lines":1}
+{"time":"2026-03-21T09:37:28.868881999Z","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-03-21T09:37:43.546840718Z","level":"INFO","msg":"filestream: sending request","total_files":2,"events_offset":7,"events_lines":1,"console_offset":0,"console_lines":1}
+{"time":"2026-03-21T09:37:43.780187109Z","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-03-21T09:37:45.239378063Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-03-21T09:37:45.24003615Z","level":"INFO","msg":"filestream: sending request","total_files":2,"console_offset":0,"console_lines":1,"uploaded_len":3,"complete":true,"exit_code":0}
+{"time":"2026-03-21T09:37:45.421107034Z","level":"INFO","msg":"filestream: request sent","status":"200 OK"}
+{"time":"2026-03-21T09:37:45.425001614Z","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2026-03-21T09:37:45.442345063Z","level":"INFO","msg":"stream: closing"}
+{"time":"2026-03-21T09:37:45.443956029Z","level":"INFO","msg":"handler: closed"}
+{"time":"2026-03-21T09:37:45.447953446Z","level":"INFO","msg":"sender: closed"}
+{"time":"2026-03-21T09:37:45.449187924Z","level":"INFO","msg":"stream: closed"}

@@ -1,0 +1,56 @@
+100%|██████████| 206/206 [00:19<00:00, 10.43it/s]
+  Средний loss критика: -0.0005
+  Средний loss генератора: 0.0006
+  Grad norm критика: 0.0550
+  Grad norm генератора: 0.0089
+  D(real) среднее: -0.0440
+  D(fake) среднее: -0.0449
+  loss: 0.0005
+epochs done: 10
+/content/drive/MyDrive/GAN_project/visualization_aux/common.py:113: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  plt.tight_layout()
+100%|██████████| 206/206 [00:19<00:00, 10.31it/s]
+  Средний loss критика: -0.0004
+  Средний loss генератора: 0.0005
+  Grad norm критика: 0.0532
+  Grad norm генератора: 0.0087
+  D(real) среднее: -0.0401
+  D(fake) среднее: -0.0406
+  loss: 0.0004
+epochs done: 11
+100%|██████████| 206/206 [00:19<00:00, 10.35it/s]
+  Средний loss критика: -0.0003
+  Средний loss генератора: 0.0004
+  Grad norm критика: 0.0482
+  Grad norm генератора: 0.0076
+  D(real) среднее: -0.0444
+  D(fake) среднее: -0.0446
+  loss: 0.0003
+epochs done: 12
+100%|██████████| 206/206 [00:19<00:00, 10.79it/s]
+  Средний loss критика: -0.0003
+  Средний loss генератора: 0.0003
+  Grad norm критика: 0.0436
+  Grad norm генератора: 0.0064
+  D(real) среднее: -0.0311
+  D(fake) среднее: -0.0315
+  loss: 0.0003
+epochs done: 13
+100%|██████████| 206/206 [00:20<00:00, 10.23it/s]
+  Средний loss критика: -0.0003
+  Средний loss генератора: 0.0004
+  Grad norm критика: 0.0425
+  Grad norm генератора: 0.0061
+  D(real) среднее: -0.0300
+  D(fake) среднее: -0.0305
+  loss: 0.0003
+Перезагружен: pipeline.gan
+Перезагружен: pipeline.physical_metrics
+Перезагружен: pipeline.physical_metrics.calogan_metrics
+✅ Загружен обученный эмбеддер
+Перезагружен: pipeline.physical_metrics.calogan_prd
+Перезагружен: pipeline.physical_metrics.prd_score
+Перезагружен: pipeline.metrics
+Все модули перезагружены!
+Checkpoint was loaded. Current epoch: 10
+[34m[1mwandb[0m: [33mWARNING[0m Calling wandb.login() after wandb.init() has no effect.

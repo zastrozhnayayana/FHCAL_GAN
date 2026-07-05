@@ -1,0 +1,72 @@
+ 50%|████▉     | 50/101 [00:30<00:38,  1.33it/s]
+
+=== ENERGY DEBUG ===
+batch_index: 0
+real energy min/mean/max: 0.08370761573314667 2.1892144680023193 7.165307998657227
+fake energy min/mean/max: 28.758682250976562 41.324893951416016 64.66270446777344
+real abs mean: 0.008935569785535336
+fake abs mean: 0.16867302358150482
+real nonzero ratio: 0.018653061240911484
+fake nonzero ratio: 0.5140816569328308
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.08907604217529297
+energy_loss: 1570.46142578125
+lambda_energy: 0.001
+lambda_energy * energy_loss: 1.5704615116119385
+sparsity_loss: 0.16867302358150482
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 0.0016867301892489195
+gen_loss total: 1.6612242460250854
+
+=== ENERGY DEBUG ===
+batch_index: 50
+real energy min/mean/max: 0.05998970568180084 2.2945199012756348 6.086695671081543
+fake energy min/mean/max: 0.42607736587524414 1.7730553150177002 3.3865113258361816
+real abs mean: 0.0093653853982687
+fake abs mean: 0.007236961741000414
+real nonzero ratio: 0.01971428655087948
+fake nonzero ratio: 0.030979592353105545
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.0036844187416136265
+energy_loss: 2.851991653442383
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.00285199168138206
+sparsity_loss: 0.007236961741000414
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 7.236961391754448e-05
+gen_loss total: 0.0066087800078094006
+
+=== ENERGY DEBUG ===
+batch_index: 100
+real energy min/mean/max: 0.03679538518190384 2.028508424758911 6.2310333251953125
+fake energy min/mean/max: 0.6478698253631592 2.3266656398773193 3.8576788902282715
+real abs mean: 0.008279625326395035
+fake abs mean: 0.009496593847870827
+real nonzero ratio: 0.017527010291814804
+fake nonzero ratio: 0.027250900864601135
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.013789188116788864
+energy_loss: 1.7795180082321167
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.0017795180901885033
+sparsity_loss: 0.009496593847870827
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 9.496593702351674e-05
+gen_loss total: 0.015663672238588333
+  Средний loss критика: -0.0106
+  Средний loss генератора: 0.0313
+  Средний adv loss генератора: 0.0115
+  Средний energy loss генератора: 19.6338
+  Средний weighted energy loss генератора: 0.0196
+  Grad norm критика: 0.1385
+  Grad norm генератора: 0.3461
+  D(real) среднее: -0.1182
+  D(fake) среднее: -0.1280
+  loss: 0.0106
+epochs done: 1
+
+    Примеры данных для визуалиации (отбирались вручную)
+

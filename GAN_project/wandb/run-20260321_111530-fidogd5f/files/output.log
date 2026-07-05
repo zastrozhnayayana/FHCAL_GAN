@@ -1,0 +1,24 @@
+100%|██████████| 206/206 [00:17<00:00, 11.67it/s]
+  Средний loss критика: -0.0006
+  Средний loss генератора: 0.0008
+  Grad norm критика: 0.0594
+  Grad norm генератора: 0.0104
+  D(real) среднее: -0.0063
+  D(fake) среднее: -0.0063
+  loss: 0.0006
+DEBUG: EnergyDeposit shape before: torch.Size([20520, 10, 7, 9])
+DEBUG: EnergyDeposit shape after: torch.Size([20520, 10, 7, 9])
+DEBUG: EnergyDeposit shape before: torch.Size([20520, 10, 7, 9])
+DEBUG: EnergyDeposit shape after: torch.Size([20520, 10, 7, 9])
+DEBUG: EnergyDeposit shape before: torch.Size([20520, 10, 7, 9])
+DEBUG: EnergyDeposit shape after: torch.Size([20520, 10, 7, 9])
+DEBUG: EnergyDeposit shape before: torch.Size([20520, 10, 7, 9])
+DEBUG: EnergyDeposit shape after: torch.Size([20520, 10, 7, 9])
+DEBUG: EnergyDeposit shape before: torch.Size([20520, 10, 7, 9])
+DEBUG: EnergyDeposit shape after: torch.Size([20520, 10, 7, 9])
+DEBUG: EnergyDeposit shape before: torch.Size([20520, 10, 7, 9])
+DEBUG: EnergyDeposit shape after: torch.Size([20520, 10, 7, 9])
+DEBUG: EnergyDeposit shape before: torch.Size([20520, 10, 7, 9])
+DEBUG: EnergyDeposit shape after: torch.Size([20520, 10, 7, 9])
+DEBUG: EnergyDeposit shape before: torch.Size([20520, 10, 7, 9])
+DEBUG: EnergyDeposit shape after: torch.Size([20520, 10, 7, 9])

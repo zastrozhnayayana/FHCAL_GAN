@@ -1,0 +1,108 @@
+ 80%|████████  | 49/61 [00:03<00:00, 13.21it/s]
+
+=== ENERGY DEBUG ===
+batch_index: 0
+real energy min/mean/max: 0.39046886563301086 6.085578441619873 17.363685607910156
+fake energy min/mean/max: 76.03449249267578 102.64960479736328 128.382568359375
+real abs mean: 0.00965964887291193
+fake abs mean: 0.16293588280677795
+real nonzero ratio: 0.018396826460957527
+fake nonzero ratio: 0.49492064118385315
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.09786916524171829
+energy_loss: 9470.201171875
+lambda_energy: 0.001
+lambda_energy * energy_loss: 9.47020149230957
+sparsity_loss: 0.16293588280677795
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 0.001629358739592135
+gen_loss total: 9.569700241088867
+
+=== ENERGY DEBUG ===
+batch_index: 50
+real energy min/mean/max: 0.34777581691741943 5.59098482131958 15.013399124145508
+fake energy min/mean/max: 2.520360231399536 7.24739933013916 16.277996063232422
+real abs mean: 0.008874579332768917
+fake abs mean: 0.011503809131681919
+real nonzero ratio: 0.017380952835083008
+fake nonzero ratio: 0.058746032416820526
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.0653931200504303
+energy_loss: 15.1598482131958
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.01515984907746315
+sparsity_loss: 0.011503809131681919
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 0.0001150380921899341
+gen_loss total: 0.08066800236701965
+  Средний loss критика: -0.0709
+  Средний loss генератора: 0.2526
+  Средний adv loss генератора: 0.0728
+  Средний energy loss генератора: 179.6195
+  Средний weighted energy loss генератора: 0.1796
+  Grad norm критика: 0.4229
+  Grad norm генератора: 1.2497
+  D(real) среднее: 0.2669
+  D(fake) среднее: 0.2010
+  loss: 0.0709
+9it [01:17,  8.61s/it]
+9it [00:48,  5.42s/it]
+epochs done: 1
+/content/drive/MyDrive/GAN_project/visualization_aux/common.py:127: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  plt.tight_layout()
+ 82%|████████▏ | 50/61 [00:04<00:00, 12.00it/s]
+
+=== ENERGY DEBUG ===
+batch_index: 0
+real energy min/mean/max: 0.28543955087661743 5.597419261932373 14.588777542114258
+fake energy min/mean/max: 2.571850299835205 6.77531099319458 12.704033851623535
+real abs mean: 0.008884793147444725
+fake abs mean: 0.010754462331533432
+real nonzero ratio: 0.017698412761092186
+fake nonzero ratio: 0.05485714599490166
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.06469029933214188
+energy_loss: 12.592512130737305
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.012592513114213943
+sparsity_loss: 0.010754462331533432
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 0.00010754461982287467
+gen_loss total: 0.07739035785198212
+
+=== ENERGY DEBUG ===
+batch_index: 50
+real energy min/mean/max: 0.08224298804998398 5.780964374542236 19.710102081298828
+fake energy min/mean/max: 1.145569920539856 6.391887187957764 19.72586441040039
+real abs mean: 0.009176134131848812
+fake abs mean: 0.010145853273570538
+real nonzero ratio: 0.018460318446159363
+fake nonzero ratio: 0.03966666758060455
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.05034078657627106
+energy_loss: 16.373796463012695
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.01637379638850689
+sparsity_loss: 0.010145853273570538
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 0.00010145852866116911
+gen_loss total: 0.066816046833992
+  Средний loss критика: -0.0498
+  Средний loss генератора: 0.0639
+  Средний adv loss генератора: 0.0503
+  Средний energy loss генератора: 13.4063
+  Средний weighted energy loss генератора: 0.0134
+  Grad norm критика: 0.3092
+  Grad norm генератора: 0.3870
+  D(real) среднее: 0.1990
+  D(fake) среднее: 0.1578
+  loss: 0.0498
+9it [01:15,  8.36s/it]
+9it [00:50,  5.65s/it]
+epochs done: 2
+/content/drive/MyDrive/GAN_project/visualization_aux/common.py:127: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  plt.tight_layout()

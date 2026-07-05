@@ -1,0 +1,601 @@
+100%|██████████| 61/61 [00:05<00:00, 10.62it/s]
+
+=== ENERGY DEBUG ===
+batch_index: 0
+real energy min/mean/max: 0.2148405909538269 6.350186824798584 18.32294273376465
+fake energy min/mean/max: 77.38966369628906 97.8834457397461 124.00830841064453
+fake abs mean: 0.1553705781698227
+fake nonzero ratio: 0.9962539672851562
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.06441852450370789
+energy_loss: 8480.18359375
+lambda_energy: 0.001
+lambda_energy * energy_loss: 8.480183601379395
+gen_loss total: 8.544602394104004
+
+=== ENERGY DEBUG ===
+batch_index: 50
+real energy min/mean/max: 0.40643027424812317 6.304577350616455 17.41112518310547
+fake energy min/mean/max: 1.8162850141525269 5.005765438079834 9.301361083984375
+fake abs mean: 0.007945658639073372
+fake nonzero ratio: 0.6868730187416077
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.19504760205745697
+energy_loss: 13.631624221801758
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.013631625100970268
+gen_loss total: 0.2086792290210724
+  Средний loss критика: -0.1929
+  Средний loss генератора: 0.4041
+  Средний adv loss генератора: 0.1933
+  Средний energy loss генератора: 210.8892
+  Средний weighted energy loss генератора: 0.2109
+  Grad norm критика: 0.6698
+  Grad norm генератора: 5.6062
+  D(real) среднее: -0.0310
+  D(fake) среднее: -0.2045
+  loss: 0.1929
+epochs done: 1
+100%|██████████| 61/61 [00:06<00:00,  9.98it/s]
+
+=== ENERGY DEBUG ===
+batch_index: 0
+real energy min/mean/max: 0.2641904354095459 6.577363014221191 22.16305923461914
+fake energy min/mean/max: 1.1747424602508545 3.815981864929199 8.971020698547363
+fake abs mean: 0.00605711480602622
+fake nonzero ratio: 0.6617460250854492
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.1879747360944748
+energy_loss: 20.762155532836914
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.020762156695127487
+gen_loss total: 0.20873689651489258
+
+=== ENERGY DEBUG ===
+batch_index: 50
+real energy min/mean/max: 0.4044908285140991 6.145662784576416 16.57693099975586
+fake energy min/mean/max: 0.35344386100769043 4.663758277893066 13.361034393310547
+fake abs mean: 0.007402791641652584
+fake nonzero ratio: 0.4301746189594269
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.1306992918252945
+energy_loss: 11.832587242126465
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.0118325874209404
+gen_loss total: 0.1425318717956543
+  Средний loss критика: -0.1421
+  Средний loss генератора: 0.1602
+  Средний adv loss генератора: 0.1449
+  Средний energy loss генератора: 15.3076
+  Средний weighted energy loss генератора: 0.0153
+  Grad norm критика: 0.3151
+  Grad norm генератора: 0.6981
+  D(real) среднее: -0.0419
+  D(fake) среднее: -0.1840
+  loss: 0.1421
+epochs done: 2
+100%|██████████| 61/61 [00:05<00:00, 11.35it/s]
+
+=== ENERGY DEBUG ===
+batch_index: 0
+real energy min/mean/max: 0.22385480999946594 6.681386470794678 16.072975158691406
+fake energy min/mean/max: 0.3001583218574524 5.435867786407471 13.89846420288086
+fake abs mean: 0.008628361858427525
+fake nonzero ratio: 0.41288891434669495
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.13692507147789001
+energy_loss: 14.876471519470215
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.0148764718323946
+gen_loss total: 0.15180154144763947
+
+=== ENERGY DEBUG ===
+batch_index: 50
+real energy min/mean/max: 0.33022356033325195 6.233667373657227 16.781967163085938
+fake energy min/mean/max: 0.18531829118728638 5.372283935546875 15.581949234008789
+fake abs mean: 0.00852743536233902
+fake nonzero ratio: 0.3404444456100464
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.13358266651630402
+energy_loss: 13.578336715698242
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.013578337617218494
+gen_loss total: 0.14716100692749023
+  Средний loss критика: -0.1352
+  Средний loss генератора: 0.1490
+  Средний adv loss генератора: 0.1353
+  Средний energy loss генератора: 13.7049
+  Средний weighted energy loss генератора: 0.0137
+  Grad norm критика: 0.2156
+  Grad norm генератора: 0.4535
+  D(real) среднее: -0.0627
+  D(fake) среднее: -0.1828
+  loss: 0.1352
+epochs done: 3
+100%|██████████| 61/61 [00:06<00:00,  9.67it/s]
+
+=== ENERGY DEBUG ===
+batch_index: 0
+real energy min/mean/max: 0.1562434434890747 6.316046237945557 17.060100555419922
+fake energy min/mean/max: 0.4523690938949585 6.351850509643555 16.03498077392578
+fake abs mean: 0.010082302615046501
+fake nonzero ratio: 0.3280634880065918
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.12380777299404144
+energy_loss: 13.348777770996094
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.013348778709769249
+gen_loss total: 0.13715654611587524
+
+=== ENERGY DEBUG ===
+batch_index: 50
+real energy min/mean/max: 0.34378424286842346 5.957749366760254 14.761255264282227
+fake energy min/mean/max: 1.6944903135299683 6.695394039154053 12.659034729003906
+fake abs mean: 0.010627610608935356
+fake nonzero ratio: 0.30868256092071533
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.12401337176561356
+energy_loss: 9.142812728881836
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.00914281327277422
+gen_loss total: 0.1331561803817749
+  Средний loss критика: -0.1178
+  Средний loss генератора: 0.1298
+  Средний adv loss генератора: 0.1178
+  Средний energy loss генератора: 12.0091
+  Средний weighted energy loss генератора: 0.0120
+  Grad norm критика: 0.2204
+  Grad norm генератора: 0.4162
+  D(real) среднее: -0.0600
+  D(fake) среднее: -0.1753
+  loss: 0.1178
+epochs done: 4
+100%|██████████| 61/61 [00:05<00:00, 11.06it/s]
+
+=== ENERGY DEBUG ===
+batch_index: 0
+real energy min/mean/max: 0.11289329826831818 6.746006488800049 16.698509216308594
+fake energy min/mean/max: 1.9893896579742432 6.601778507232666 13.111749649047852
+fake abs mean: 0.010479013435542583
+fake nonzero ratio: 0.29774603247642517
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.134355828166008
+energy_loss: 9.095013618469238
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.009095014072954655
+gen_loss total: 0.14345084130764008
+
+=== ENERGY DEBUG ===
+batch_index: 50
+real energy min/mean/max: 0.30002111196517944 6.129854679107666 18.0089054107666
+fake energy min/mean/max: 1.7966368198394775 7.886723518371582 15.834014892578125
+fake abs mean: 0.012518608942627907
+fake nonzero ratio: 0.3336825370788574
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.09203515946865082
+energy_loss: 14.749813079833984
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.014749813824892044
+gen_loss total: 0.10678496956825256
+  Средний loss критика: -0.1168
+  Средний loss генератора: 0.1290
+  Средний adv loss генератора: 0.1168
+  Средний energy loss генератора: 12.2308
+  Средний weighted energy loss генератора: 0.0122
+  Grad norm критика: 0.2948
+  Grad norm генератора: 0.5532
+  D(real) среднее: -0.0903
+  D(fake) среднее: -0.1534
+  loss: 0.1168
+epochs done: 5
+100%|██████████| 61/61 [00:06<00:00,  9.03it/s]
+
+=== ENERGY DEBUG ===
+batch_index: 0
+real energy min/mean/max: 0.35994982719421387 6.326642990112305 17.98495864868164
+fake energy min/mean/max: 0.999516487121582 8.367461204528809 15.585105895996094
+fake abs mean: 0.01328168623149395
+fake nonzero ratio: 0.35449206829071045
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.07303375750780106
+energy_loss: 16.48089599609375
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.01648089662194252
+gen_loss total: 0.08951465785503387
+
+=== ENERGY DEBUG ===
+batch_index: 50
+real energy min/mean/max: 0.4011157751083374 7.391794681549072 16.73332977294922
+fake energy min/mean/max: 0.9701125621795654 7.474167346954346 14.67037296295166
+fake abs mean: 0.011863757856190205
+fake nonzero ratio: 0.42506349086761475
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.011251918040215969
+energy_loss: 7.88805627822876
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.007888056337833405
+gen_loss total: 0.019139975309371948
+  Средний loss критика: -0.0363
+  Средний loss генератора: 0.0551
+  Средний adv loss генератора: 0.0384
+  Средний energy loss генератора: 16.7027
+  Средний weighted energy loss генератора: 0.0167
+  Grad norm критика: 0.2714
+  Grad norm генератора: 0.4711
+  D(real) среднее: -0.1850
+  D(fake) среднее: -0.1863
+  loss: 0.0363
+epochs done: 6
+100%|██████████| 61/61 [00:05<00:00, 11.37it/s]
+
+=== ENERGY DEBUG ===
+batch_index: 0
+real energy min/mean/max: 0.12648849189281464 6.271927833557129 17.804990768432617
+fake energy min/mean/max: 0.5226612091064453 7.078119277954102 14.624368667602539
+fake abs mean: 0.011235110461711884
+fake nonzero ratio: 0.3999682664871216
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.004753907676786184
+energy_loss: 14.78071403503418
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.014780715107917786
+gen_loss total: 0.019534623250365257
+
+=== ENERGY DEBUG ===
+batch_index: 50
+real energy min/mean/max: 0.2057739943265915 6.566083908081055 15.380990982055664
+fake energy min/mean/max: 0.9120160341262817 7.2976579666137695 14.936592102050781
+fake abs mean: 0.011583585292100906
+fake nonzero ratio: 0.36580953001976013
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.026145271956920624
+energy_loss: 9.680765151977539
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.009680765680968761
+gen_loss total: 0.03582603856921196
+  Средний loss критика: -0.0139
+  Средний loss генератора: 0.0257
+  Средний adv loss генератора: 0.0148
+  Средний energy loss генератора: 10.9391
+  Средний weighted energy loss генератора: 0.0109
+  Grad norm критика: 0.1246
+  Grad norm генератора: 0.2136
+  D(real) среднее: -0.0387
+  D(fake) среднее: -0.1471
+  loss: 0.0139
+epochs done: 7
+100%|██████████| 61/61 [00:06<00:00,  9.59it/s]
+
+=== ENERGY DEBUG ===
+batch_index: 0
+real energy min/mean/max: 0.21939429640769958 5.815184116363525 16.576932907104492
+fake energy min/mean/max: 0.6059255599975586 6.600260257720947 13.434476852416992
+fake abs mean: 0.010476604104042053
+fake nonzero ratio: 0.297349214553833
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.10574090480804443
+energy_loss: 13.694711685180664
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.013694711960852146
+gen_loss total: 0.119435615837574
+
+=== ENERGY DEBUG ===
+batch_index: 50
+real energy min/mean/max: 0.04639456793665886 6.480777263641357 16.141416549682617
+fake energy min/mean/max: 2.521070718765259 7.805098533630371 13.623708724975586
+fake abs mean: 0.012389046140015125
+fake nonzero ratio: 0.13671429455280304
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: -0.013305864296853542
+energy_loss: 11.070300102233887
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.011070300824940205
+gen_loss total: -0.0022355634719133377
+  Средний loss критика: 0.0111
+  Средний loss генератора: 0.0063
+  Средний adv loss генератора: -0.0098
+  Средний energy loss генератора: 16.0704
+  Средний weighted energy loss генератора: 0.0161
+  Grad norm критика: 0.2878
+  Grad norm генератора: 0.3453
+  D(real) среднее: 0.1027
+  D(fake) среднее: 0.1160
+  loss: -0.0111
+epochs done: 8
+100%|██████████| 61/61 [00:05<00:00, 11.12it/s]
+
+=== ENERGY DEBUG ===
+batch_index: 0
+real energy min/mean/max: 0.532218337059021 6.3670244216918945 16.781967163085938
+fake energy min/mean/max: 1.8141860961914062 8.086564064025879 15.219015121459961
+fake abs mean: 0.012835816480219364
+fake nonzero ratio: 0.1298571527004242
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: -0.010268481448292732
+energy_loss: 9.747817993164062
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.009747818112373352
+gen_loss total: -0.0005206633359193802
+
+=== ENERGY DEBUG ===
+batch_index: 50
+real energy min/mean/max: 0.8198345899581909 6.588414192199707 16.84745216369629
+fake energy min/mean/max: 1.6843867301940918 7.499093055725098 12.63369369506836
+fake abs mean: 0.01190332230180502
+fake nonzero ratio: 0.14065079391002655
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.020874714478850365
+energy_loss: 10.226747512817383
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.010226747952401638
+gen_loss total: 0.031101461499929428
+  Средний loss критика: -0.0042
+  Средний loss генератора: 0.0164
+  Средний adv loss генератора: 0.0044
+  Средний energy loss генератора: 11.9900
+  Средний weighted energy loss генератора: 0.0120
+  Grad norm критика: 0.0817
+  Grad norm генератора: 0.1575
+  D(real) среднее: 0.1049
+  D(fake) среднее: 0.1143
+  loss: 0.0042
+epochs done: 9
+100%|██████████| 61/61 [00:07<00:00,  8.37it/s]
+
+=== ENERGY DEBUG ===
+batch_index: 0
+real energy min/mean/max: 0.12528839707374573 6.663302898406982 16.185745239257812
+fake energy min/mean/max: 1.8979814052581787 8.181154251098633 15.389320373535156
+fake abs mean: 0.012985959649085999
+fake nonzero ratio: 0.303984135389328
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: -0.013852632604539394
+energy_loss: 12.917597770690918
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.012917598709464073
+gen_loss total: -0.0009350338950753212
+
+=== ENERGY DEBUG ===
+batch_index: 50
+real energy min/mean/max: 0.1993100643157959 6.301242351531982 18.303264617919922
+fake energy min/mean/max: 2.0895252227783203 7.602412700653076 12.477022171020508
+fake abs mean: 0.012067322619259357
+fake nonzero ratio: 0.1873968243598938
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.0072225662879645824
+energy_loss: 12.561396598815918
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.01256139762699604
+gen_loss total: 0.01978396438062191
+  Средний loss критика: 0.0002
+  Средний loss генератора: 0.0135
+  Средний adv loss генератора: 0.0007
+  Средний energy loss генератора: 12.7821
+  Средний weighted energy loss генератора: 0.0128
+  Grad norm критика: 0.1283
+  Grad norm генератора: 0.2297
+  D(real) среднее: -0.0106
+  D(fake) среднее: -0.0184
+  loss: -0.0002
+epochs done: 10
+100%|██████████| 61/61 [00:05<00:00, 10.88it/s]
+
+=== ENERGY DEBUG ===
+batch_index: 0
+real energy min/mean/max: 0.28543955087661743 6.866808891296387 17.543209075927734
+fake energy min/mean/max: 1.9496662616729736 8.145768165588379 13.84487247467041
+fake abs mean: 0.012929792515933514
+fake nonzero ratio: 0.2774761915206909
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.025464244186878204
+energy_loss: 11.939681053161621
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.011939682066440582
+gen_loss total: 0.03740392625331879
+
+=== ENERGY DEBUG ===
+batch_index: 50
+real energy min/mean/max: 0.2057739943265915 6.968384742736816 19.77519989013672
+fake energy min/mean/max: 1.5353691577911377 7.063394546508789 12.533246994018555
+fake abs mean: 0.011211737990379333
+fake nonzero ratio: 0.13811111450195312
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: -0.0036321335937827826
+energy_loss: 11.079643249511719
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.011079643853008747
+gen_loss total: 0.007447510026395321
+  Средний loss критика: -0.0087
+  Средний loss генератора: 0.0226
+  Средний adv loss генератора: 0.0103
+  Средний energy loss генератора: 12.2216
+  Средний weighted energy loss генератора: 0.0122
+  Grad norm критика: 0.2073
+  Grad norm генератора: 0.2585
+  D(real) среднее: -0.1482
+  D(fake) среднее: -0.1494
+  loss: 0.0087
+epochs done: 11
+100%|██████████| 61/61 [00:06<00:00, 10.15it/s]
+
+=== ENERGY DEBUG ===
+batch_index: 0
+real energy min/mean/max: 0.08224298804998398 6.173041343688965 17.5185546875
+fake energy min/mean/max: 1.315563678741455 6.459843158721924 11.584444999694824
+fake abs mean: 0.010253719985485077
+fake nonzero ratio: 0.11898413300514221
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.0002907381858676672
+energy_loss: 10.351105690002441
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.010351106524467468
+gen_loss total: 0.010641844943165779
+
+=== ENERGY DEBUG ===
+batch_index: 50
+real energy min/mean/max: 0.34777581691741943 6.888204574584961 16.79197120666504
+fake energy min/mean/max: 1.7224013805389404 6.501591682434082 12.85295295715332
+fake abs mean: 0.010319987311959267
+fake nonzero ratio: 0.2948571443557739
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.002171584637835622
+energy_loss: 8.06906795501709
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.008069068193435669
+gen_loss total: 0.010240652598440647
+  Средний loss критика: -0.0067
+  Средний loss генератора: 0.0181
+  Средний adv loss генератора: 0.0074
+  Средний energy loss генератора: 10.7542
+  Средний weighted energy loss генератора: 0.0108
+  Grad norm критика: 0.1025
+  Grad norm генератора: 0.1616
+  D(real) среднее: -0.1425
+  D(fake) среднее: -0.1441
+  loss: 0.0067
+epochs done: 12
+100%|██████████| 61/61 [00:05<00:00, 10.35it/s]
+
+=== ENERGY DEBUG ===
+batch_index: 0
+real energy min/mean/max: 0.34780022501945496 6.867902755737305 14.663248062133789
+fake energy min/mean/max: 1.4332044124603271 6.467965126037598 12.786416053771973
+fake abs mean: 0.010266611352562904
+fake nonzero ratio: 0.24196825921535492
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.0021432472858577967
+energy_loss: 6.419881343841553
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.006419881712645292
+gen_loss total: 0.008563129231333733
+
+=== ENERGY DEBUG ===
+batch_index: 50
+real energy min/mean/max: 0.13534000515937805 7.092915058135986 17.94060516357422
+fake energy min/mean/max: 1.0508887767791748 6.942801475524902 11.518087387084961
+fake abs mean: 0.01102032046765089
+fake nonzero ratio: 0.13874603807926178
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.0011117771500721574
+energy_loss: 11.928030967712402
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.011928031221032143
+gen_loss total: 0.013039808720350266
+  Средний loss критика: -0.0070
+  Средний loss генератора: 0.0177
+  Средний adv loss генератора: 0.0076
+  Средний energy loss генератора: 10.1037
+  Средний weighted energy loss генератора: 0.0101
+  Grad norm критика: 0.1073
+  Grad norm генератора: 0.1768
+  D(real) среднее: -0.1336
+  D(fake) среднее: -0.1328
+  loss: 0.0070
+epochs done: 13
+100%|██████████| 61/61 [00:05<00:00, 10.94it/s]
+
+=== ENERGY DEBUG ===
+batch_index: 0
+real energy min/mean/max: 0.5855292677879333 5.708525657653809 15.712080001831055
+fake energy min/mean/max: 1.7201926708221436 7.173768043518066 13.904719352722168
+fake abs mean: 0.011386933736503124
+fake nonzero ratio: 0.12177778035402298
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: -0.000994735979475081
+energy_loss: 11.156079292297363
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.011156079359352589
+gen_loss total: 0.010161343030631542
+
+=== ENERGY DEBUG ===
+batch_index: 50
+real energy min/mean/max: 0.1930197775363922 6.585592269897461 18.1779842376709
+fake energy min/mean/max: 1.1851084232330322 7.447554111480713 13.505293846130371
+fake abs mean: 0.01182151585817337
+fake nonzero ratio: 0.14598412811756134
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: -0.000878086662851274
+energy_loss: 8.753722190856934
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.008753722533583641
+gen_loss total: 0.007875636219978333
+  Средний loss критика: -0.0093
+  Средний loss генератора: 0.0210
+  Средний adv loss генератора: 0.0099
+  Средний energy loss генератора: 11.0930
+  Средний weighted energy loss генератора: 0.0111
+  Grad norm критика: 0.0765
+  Grad norm генератора: 0.1429
+  D(real) среднее: -0.1170
+  D(fake) среднее: -0.1235
+  loss: 0.0093
+epochs done: 14
+100%|██████████| 61/61 [00:06<00:00,  9.55it/s]
+
+=== ENERGY DEBUG ===
+batch_index: 0
+real energy min/mean/max: 0.6989813446998596 6.338490009307861 16.916545867919922
+fake energy min/mean/max: 1.3746601343154907 6.686548233032227 12.415179252624512
+fake abs mean: 0.010613569058477879
+fake nonzero ratio: 0.11441270262002945
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.005066287238150835
+energy_loss: 8.19584846496582
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.008195849135518074
+gen_loss total: 0.013262135908007622
+
+=== ENERGY DEBUG ===
+batch_index: 50
+real energy min/mean/max: 0.13959307968616486 7.0145158767700195 20.645917892456055
+fake energy min/mean/max: 1.9765710830688477 6.48852014541626 10.626144409179688
+fake abs mean: 0.010299239307641983
+fake nonzero ratio: 0.26417461037635803
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.031398165971040726
+energy_loss: 15.986284255981445
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.015986284241080284
+gen_loss total: 0.04738444834947586
+  Средний loss критика: -0.0205
+  Средний loss генератора: 0.0307
+  Средний adv loss генератора: 0.0202
+  Средний energy loss генератора: 10.5291
+  Средний weighted energy loss генератора: 0.0105
+  Grad norm критика: 0.0828
+  Grad norm генератора: 0.1200
+  D(real) среднее: -0.1076
+  D(fake) среднее: -0.1123
+  loss: 0.0205
+9it [01:21,  9.00s/it]
+0it [00:04, ?it/s]

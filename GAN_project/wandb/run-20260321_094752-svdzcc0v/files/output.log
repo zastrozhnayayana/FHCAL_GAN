@@ -1,0 +1,122 @@
+100%|██████████| 206/206 [00:21<00:00,  9.79it/s]
+  Средний loss критика: -0.0001
+  Средний loss генератора: 0.0001
+  Grad norm критика: 0.0235
+  Grad norm генератора: 0.0018
+  D(real) среднее: -0.3686
+  D(fake) среднее: -0.3687
+  loss: 0.0001
+epochs done: 1
+Структура visualization_data:
+  len(visualization_data): 3
+  visualization_data[0] type: <class 'numpy.ndarray'>
+  visualization_data[0] shape: (5, 7, 9, 10)
+  visualization_data[1] type: <class 'torch.Tensor'>
+  visualization_data[1] shape: torch.Size([5, 2])
+  visualization_data[2] type: <class 'torch.Tensor'>
+  visualization_data[2] shape: torch.Size([5, 3])
+Перезагружен: pipeline.discriminators
+Перезагружен: pipeline.generators
+Перезагружен: pipeline.gan
+Перезагружен: visualization_aux.common
+Все модули перезагружены!
+100%|██████████| 206/206 [00:17<00:00, 11.58it/s]
+  Средний loss критика: -0.0003
+  Средний loss генератора: 0.0004
+  Grad norm критика: 0.0274
+  Grad norm генератора: 0.0022
+  D(real) среднее: -0.3805
+  D(fake) среднее: -0.3811
+  loss: 0.0003
+epochs done: 2
+Перезагружен: pipeline.discriminators
+Перезагружен: pipeline.generators
+Перезагружен: pipeline.gan
+Все модули перезагружены!
+/content/drive/MyDrive/GAN_project/visualization_aux/visualize_physics.py:49: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  fig, axes = plt.subplots(2, 5, figsize=(18, 8))
+100%|██████████| 206/206 [00:18<00:00, 11.12it/s]
+  Средний loss критика: -0.0009
+  Средний loss генератора: 0.0010
+  Grad norm критика: 0.0502
+  Grad norm генератора: 0.0046
+  D(real) среднее: -0.3779
+  D(fake) среднее: -0.3786
+  loss: 0.0009
+epochs done: 3
+Перезагружен: visualization_aux.visualize_physics
+Все модули перезагружены!
+/content/drive/MyDrive/GAN_project/visualization_aux/visualize_physics.py:70: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+
+100%|██████████| 206/206 [00:17<00:00, 11.66it/s]
+  Средний loss критика: -0.0020
+  Средний loss генератора: 0.0022
+  Grad norm критика: 0.0802
+  Grad norm генератора: 0.0082
+  D(real) среднее: -0.3751
+  D(fake) среднее: -0.3767
+  loss: 0.0020
+epochs done: 4
+Перезагружен: visualization_aux.visualize_physics
+Все модули перезагружены!
+/content/drive/MyDrive/GAN_project/visualization_aux/visualize_physics.py:75: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  # else:
+100%|██████████| 206/206 [00:18<00:00, 11.28it/s]
+  Средний loss критика: -0.0031
+  Средний loss генератора: 0.0035
+  Grad norm критика: 0.1297
+  Grad norm генератора: 0.0130
+  D(real) среднее: -0.3398
+  D(fake) среднее: -0.3066
+  loss: 0.0031
+epochs done: 5
+Перезагружен: visualization_aux.common
+Все модули перезагружены!
+100%|██████████| 206/206 [00:18<00:00, 10.85it/s]
+  Средний loss критика: -0.0024
+  Средний loss генератора: 0.0028
+  Grad norm критика: 0.1463
+  Grad norm генератора: 0.0144
+  D(real) среднее: -0.3342
+  D(fake) среднее: -0.3536
+  loss: 0.0024
+epochs done: 6
+Перезагружен: visualization_aux.common
+Все модули перезагружены!
+100%|██████████| 206/206 [00:19<00:00, 10.71it/s]
+  Средний loss критика: -0.0026
+  Средний loss генератора: 0.0029
+  Grad norm критика: 0.1339
+  Grad norm генератора: 0.0151
+  D(real) среднее: -0.3323
+  D(fake) среднее: -0.3325
+  loss: 0.0026
+epochs done: 7
+100%|██████████| 206/206 [00:18<00:00, 11.02it/s]
+  Средний loss критика: -0.0022
+  Средний loss генератора: 0.0024
+  Grad norm критика: 0.1130
+  Grad norm генератора: 0.0125
+  D(real) среднее: -0.3126
+  D(fake) среднее: -0.3152
+  loss: 0.0022
+epochs done: 8
+/content/drive/MyDrive/GAN_project/visualization_aux/common.py:113: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  plt.tight_layout()
+100%|██████████| 206/206 [00:17<00:00, 11.50it/s]
+  Средний loss критика: -0.0026
+  Средний loss генератора: 0.0028
+  Grad norm критика: 0.1050
+  Grad norm генератора: 0.0127
+  D(real) среднее: -0.3052
+  D(fake) среднее: -0.3039
+  loss: 0.0026
+epochs done: 9
+100%|██████████| 206/206 [00:18<00:00, 11.17it/s]
+  Средний loss критика: -0.0017
+  Средний loss генератора: 0.0020
+  Grad norm критика: 0.0918
+  Grad norm генератора: 0.0122
+  D(real) среднее: -0.2800
+  D(fake) среднее: -0.2792
+  loss: 0.0017

@@ -1,0 +1,1053 @@
+ 49%|████▊     | 49/101 [00:05<00:05, 10.15it/s]
+
+=== ENERGY DEBUG ===
+batch_index: 0
+real energy min/mean/max: 0.04192866384983063 2.2766072750091553 7.074271202087402
+fake energy min/mean/max: 31.88109016418457 41.12627029418945 57.300010681152344
+real abs mean: 0.00929227378219366
+fake abs mean: 0.16786232590675354
+real nonzero ratio: 0.019224489107728004
+fake nonzero ratio: 0.5062040686607361
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.06562585383653641
+energy_loss: 1532.7578125
+lambda_energy: 0.001
+lambda_energy * energy_loss: 1.5327578783035278
+sparsity_loss: 0.16786232590675354
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 0.0016786232590675354
+gen_loss total: 1.600062370300293
+
+=== ENERGY DEBUG ===
+batch_index: 50
+real energy min/mean/max: 0.010911887511610985 2.4123589992523193 6.76291036605835
+fake energy min/mean/max: 0.12262265384197235 1.5483371019363403 3.877009391784668
+real abs mean: 0.009846363216638565
+fake abs mean: 0.006319742184132338
+real nonzero ratio: 0.0193469375371933
+fake nonzero ratio: 0.03199999779462814
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: -0.0029947273433208466
+energy_loss: 3.3578131198883057
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.0033578132279217243
+sparsity_loss: 0.006319742184132338
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 6.319741805782542e-05
+gen_loss total: 0.0004262833099346608
+
+=== ENERGY DEBUG ===
+batch_index: 100
+real energy min/mean/max: 0.14501668512821198 2.1362478733062744 6.186185359954834
+fake energy min/mean/max: 0.6009621024131775 3.0432636737823486 5.090042591094971
+real abs mean: 0.00871937908232212
+fake abs mean: 0.012421484105288982
+real nonzero ratio: 0.018967587500810623
+fake nonzero ratio: 0.03817526996135712
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.006627222988754511
+energy_loss: 3.4379446506500244
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.003437944920733571
+sparsity_loss: 0.012421484105288982
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 0.00012421484279911965
+gen_loss total: 0.010189383290708065
+  Средний loss критика: -0.0095
+  Средний loss генератора: 0.0297
+  Средний adv loss генератора: 0.0102
+  Средний energy loss генератора: 19.3601
+  Средний weighted energy loss генератора: 0.0194
+  Grad norm критика: 0.1177
+  Grad norm генератора: 0.3657
+  D(real) среднее: -0.0519
+  D(fake) среднее: -0.0578
+  loss: 0.0095
+epochs done: 1
+/content/drive/MyDrive/GAN_project/visualization_aux/common.py:127: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  plt.tight_layout()
+ 49%|████▊     | 49/101 [00:03<00:03, 13.38it/s]
+
+=== ENERGY DEBUG ===
+batch_index: 0
+real energy min/mean/max: 0.017079899087548256 2.421743869781494 7.090464115142822
+fake energy min/mean/max: 0.35366004705429077 3.0607378482818604 6.078056812286377
+real abs mean: 0.009884669445455074
+fake abs mean: 0.01249280758202076
+real nonzero ratio: 0.019999999552965164
+fake nonzero ratio: 0.038734693080186844
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.004318099468946457
+energy_loss: 3.406940221786499
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.003406940493732691
+sparsity_loss: 0.01249280758202076
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 0.0001249280758202076
+gen_loss total: 0.007849968038499355
+
+=== ENERGY DEBUG ===
+batch_index: 50
+real energy min/mean/max: 0.09112561494112015 2.2411131858825684 6.4526238441467285
+fake energy min/mean/max: 0.07169995456933975 2.3663153648376465 6.283910274505615
+real abs mean: 0.009147400967776775
+fake abs mean: 0.009658430702984333
+real nonzero ratio: 0.01795918308198452
+fake nonzero ratio: 0.026571428403258324
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.0019084849627688527
+energy_loss: 2.902303457260132
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.0029023035895079374
+sparsity_loss: 0.009658430702984333
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 9.658430644776672e-05
+gen_loss total: 0.004907372873276472
+
+=== ENERGY DEBUG ===
+batch_index: 100
+real energy min/mean/max: 0.0015978235751390457 2.782435178756714 6.688488006591797
+fake energy min/mean/max: 0.21893095970153809 2.084027051925659 4.470614433288574
+real abs mean: 0.011356879025697708
+fake abs mean: 0.008506232872605324
+real nonzero ratio: 0.022569026798009872
+fake nonzero ratio: 0.022328931838274002
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.004578420426696539
+energy_loss: 3.1754634380340576
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.0031754635274410248
+sparsity_loss: 0.008506232872605324
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 8.506232552463189e-05
+gen_loss total: 0.007838945835828781
+  Средний loss критика: -0.0023
+  Средний loss генератора: 0.0057
+  Средний adv loss генератора: 0.0026
+  Средний energy loss генератора: 2.9854
+  Средний weighted energy loss генератора: 0.0030
+  Grad norm критика: 0.0573
+  Grad norm генератора: 0.1426
+  D(real) среднее: -0.0344
+  D(fake) среднее: -0.0333
+  loss: 0.0023
+epochs done: 2
+ 49%|████▊     | 49/101 [00:03<00:03, 13.52it/s]
+
+=== ENERGY DEBUG ===
+batch_index: 0
+real energy min/mean/max: 0.0907645970582962 2.0354323387145996 6.965885162353516
+fake energy min/mean/max: 0.28244897723197937 2.5234291553497314 6.234453201293945
+real abs mean: 0.008307887241244316
+fake abs mean: 0.010299710556864738
+real nonzero ratio: 0.017224488779902458
+fake nonzero ratio: 0.0279999990016222
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.0008876489591784775
+energy_loss: 2.451129913330078
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.0024511299561709166
+sparsity_loss: 0.010299710556864738
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 0.00010299710265826434
+gen_loss total: 0.003441775916144252
+
+=== ENERGY DEBUG ===
+batch_index: 50
+real energy min/mean/max: 0.03074917197227478 2.3718626499176025 7.614058494567871
+fake energy min/mean/max: 0.05879172682762146 1.9265471696853638 4.733040809631348
+real abs mean: 0.00968107208609581
+fake abs mean: 0.00786345824599266
+real nonzero ratio: 0.0193061213940382
+fake nonzero ratio: 0.019918367266654968
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.003975813277065754
+energy_loss: 2.8748040199279785
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.0028748041950166225
+sparsity_loss: 0.00786345824599266
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 7.863457722123712e-05
+gen_loss total: 0.006929251831024885
+
+=== ENERGY DEBUG ===
+batch_index: 100
+real energy min/mean/max: 0.18563111126422882 2.226954936981201 5.01759147644043
+fake energy min/mean/max: 0.0 2.233264923095703 5.370247840881348
+real abs mean: 0.009089612402021885
+fake abs mean: 0.009115367196500301
+real nonzero ratio: 0.016566626727581024
+fake nonzero ratio: 0.028451381251215935
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.002255604835227132
+energy_loss: 2.8402912616729736
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.002840291475877166
+sparsity_loss: 0.009115367196500301
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 9.115366992773488e-05
+gen_loss total: 0.005187049973756075
+  Средний loss критика: -0.0017
+  Средний loss генератора: 0.0045
+  Средний adv loss генератора: 0.0017
+  Средний energy loss генератора: 2.6626
+  Средний weighted energy loss генератора: 0.0027
+  Grad norm критика: 0.0422
+  Grad norm генератора: 0.0977
+  D(real) среднее: -0.0228
+  D(fake) среднее: -0.0260
+  loss: 0.0017
+epochs done: 3
+ 50%|████▉     | 50/101 [00:04<00:04, 10.39it/s]
+
+=== ENERGY DEBUG ===
+batch_index: 0
+real energy min/mean/max: 0.08694984763860703 2.099783182144165 9.205883979797363
+fake energy min/mean/max: 0.0 2.5104870796203613 7.792191505432129
+real abs mean: 0.008570543490350246
+fake abs mean: 0.010246885940432549
+real nonzero ratio: 0.016897957772016525
+fake nonzero ratio: 0.027714284136891365
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.003266309155151248
+energy_loss: 3.7916653156280518
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.0037916654255241156
+sparsity_loss: 0.010246885940432549
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 0.0001024688535835594
+gen_loss total: 0.0071604433469474316
+
+=== ENERGY DEBUG ===
+batch_index: 50
+real energy min/mean/max: 0.04408424347639084 2.014608383178711 5.716780662536621
+fake energy min/mean/max: 0.0 1.9383693933486938 7.039366722106934
+real abs mean: 0.008222891017794609
+fake abs mean: 0.007911711931228638
+real nonzero ratio: 0.016367346048355103
+fake nonzero ratio: 0.020326530560851097
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.0019861466716974974
+energy_loss: 2.4410088062286377
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.002441008808091283
+sparsity_loss: 0.007911711931228638
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 7.911711873020977e-05
+gen_loss total: 0.004506272729486227
+
+=== ENERGY DEBUG ===
+batch_index: 100
+real energy min/mean/max: 0.14701655507087708 2.3416662216186523 6.475403308868408
+fake energy min/mean/max: 0.19656912982463837 2.3801169395446777 6.455713748931885
+real abs mean: 0.009557821787893772
+fake abs mean: 0.009714762680232525
+real nonzero ratio: 0.01860744319856167
+fake nonzero ratio: 0.0247298926115036
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.0007841818151064217
+energy_loss: 3.6803369522094727
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.003680337220430374
+sparsity_loss: 0.009714762680232525
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 9.714762563817203e-05
+gen_loss total: 0.004561666864901781
+  Средний loss критика: -0.0013
+  Средний loss генератора: 0.0039
+  Средний adv loss генератора: 0.0014
+  Средний energy loss генератора: 2.3772
+  Средний weighted energy loss генератора: 0.0024
+  Grad norm критика: 0.0362
+  Grad norm генератора: 0.0719
+  D(real) среднее: -0.0113
+  D(fake) среднее: -0.0147
+  loss: 0.0013
+epochs done: 4
+ 49%|████▊     | 49/101 [00:03<00:03, 13.52it/s]
+
+=== ENERGY DEBUG ===
+batch_index: 0
+real energy min/mean/max: 0.12467744946479797 2.1625523567199707 6.599015235900879
+fake energy min/mean/max: 0.0 2.2437667846679688 5.746054649353027
+real abs mean: 0.008826743811368942
+fake abs mean: 0.009158230386674404
+real nonzero ratio: 0.01697959192097187
+fake nonzero ratio: 0.022734692320227623
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.0006869095377624035
+energy_loss: 2.087780714035034
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.0020877807401120663
+sparsity_loss: 0.009158230386674404
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 9.158230386674404e-05
+gen_loss total: 0.002866272581741214
+
+=== ENERGY DEBUG ===
+batch_index: 50
+real energy min/mean/max: 0.004859722685068846 1.8655229806900024 6.871115207672119
+fake energy min/mean/max: 0.06244811788201332 2.2707388401031494 5.826813697814941
+real abs mean: 0.007614379748702049
+fake abs mean: 0.0092683220282197
+real nonzero ratio: 0.015265305526554585
+fake nonzero ratio: 0.024979591369628906
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.0011367483530193567
+energy_loss: 1.9850525856018066
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.001985052600502968
+sparsity_loss: 0.0092683220282197
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 9.268322173738852e-05
+gen_loss total: 0.003214484080672264
+
+=== ENERGY DEBUG ===
+batch_index: 100
+real energy min/mean/max: 0.1388975828886032 2.508986234664917 6.475403308868408
+fake energy min/mean/max: 0.0 1.922685980796814 5.509074687957764
+real abs mean: 0.010240760631859303
+fake abs mean: 0.007847697474062443
+real nonzero ratio: 0.021488595753908157
+fake nonzero ratio: 0.021848740056157112
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.0021866904571652412
+energy_loss: 2.908961772918701
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.002908961847424507
+sparsity_loss: 0.007847697474062443
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 7.84769727033563e-05
+gen_loss total: 0.005174129270017147
+  Средний loss критика: -0.0008
+  Средний loss генератора: 0.0030
+  Средний adv loss генератора: 0.0009
+  Средний energy loss генератора: 2.0784
+  Средний weighted energy loss генератора: 0.0021
+  Grad norm критика: 0.0288
+  Grad norm генератора: 0.0614
+  D(real) среднее: -0.0109
+  D(fake) среднее: -0.0129
+  loss: 0.0008
+epochs done: 5
+ 49%|████▊     | 49/101 [00:04<00:03, 13.72it/s]
+
+=== ENERGY DEBUG ===
+batch_index: 0
+real energy min/mean/max: 0.04248499125242233 2.108922004699707 5.566624641418457
+fake energy min/mean/max: 0.0 2.08561372756958 6.27412748336792
+real abs mean: 0.008607844822108746
+fake abs mean: 0.008512708358466625
+real nonzero ratio: 0.017673468217253685
+fake nonzero ratio: 0.02159183658659458
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: -0.0001572262408444658
+energy_loss: 1.6833947896957397
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.0016833948902785778
+sparsity_loss: 0.008512708358466625
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 8.512708154739812e-05
+gen_loss total: 0.0016112957382574677
+
+=== ENERGY DEBUG ===
+batch_index: 50
+real energy min/mean/max: 0.00817854329943657 2.073507070541382 6.303455352783203
+fake energy min/mean/max: 0.27175217866897583 2.8971822261810303 5.543185234069824
+real abs mean: 0.008463295176625252
+fake abs mean: 0.011825231835246086
+real nonzero ratio: 0.01702040806412697
+fake nonzero ratio: 0.026326529681682587
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.0008788339328020811
+energy_loss: 2.242861032485962
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.002242861082777381
+sparsity_loss: 0.011825231835246086
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 0.00011825231922557577
+gen_loss total: 0.003239947371184826
+
+=== ENERGY DEBUG ===
+batch_index: 100
+real energy min/mean/max: 0.05837647616863251 2.4405670166015625 5.819892406463623
+fake energy min/mean/max: 0.3779480457305908 2.7653679847717285 4.957181453704834
+real abs mean: 0.009961497969925404
+fake abs mean: 0.011287215165793896
+real nonzero ratio: 0.021008403971791267
+fake nonzero ratio: 0.03145258128643036
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: -6.60721052554436e-05
+energy_loss: 1.7115530967712402
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.0017115531954914331
+sparsity_loss: 0.011287215165793896
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 0.00011287214874755591
+gen_loss total: 0.0017583532026037574
+  Средний loss критика: -0.0008
+  Средний loss генератора: 0.0029
+  Средний adv loss генератора: 0.0009
+  Средний energy loss генератора: 1.8953
+  Средний weighted energy loss генератора: 0.0019
+  Grad norm критика: 0.0269
+  Grad norm генератора: 0.0521
+  D(real) среднее: -0.0202
+  D(fake) среднее: -0.0200
+  loss: 0.0008
+epochs done: 6
+ 50%|████▉     | 50/101 [00:04<00:04, 10.67it/s]
+
+=== ENERGY DEBUG ===
+batch_index: 0
+real energy min/mean/max: 0.008087359368801117 2.045250415802002 6.087957382202148
+fake energy min/mean/max: 0.3630974590778351 2.912301540374756 6.617465019226074
+real abs mean: 0.008347960188984871
+fake abs mean: 0.01188694592565298
+real nonzero ratio: 0.017306121066212654
+fake nonzero ratio: 0.031183673068881035
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: -7.112554885679856e-05
+energy_loss: 2.255356788635254
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.0022553568705916405
+sparsity_loss: 0.01188694592565298
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 0.0001188694586744532
+gen_loss total: 0.0023031006567180157
+
+=== ENERGY DEBUG ===
+batch_index: 50
+real energy min/mean/max: 0.017079899087548256 2.326369047164917 6.288326263427734
+fake energy min/mean/max: 0.0 2.0678415298461914 5.669270992279053
+real abs mean: 0.009495383128523827
+fake abs mean: 0.00844017043709755
+real nonzero ratio: 0.018816325813531876
+fake nonzero ratio: 0.02048979513347149
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.0001342323375865817
+energy_loss: 1.4178184270858765
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.0014178184792399406
+sparsity_loss: 0.00844017043709755
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 8.44017049530521e-05
+gen_loss total: 0.0016364525072276592
+
+=== ENERGY DEBUG ===
+batch_index: 100
+real energy min/mean/max: 0.14311641454696655 2.5795793533325195 8.530720710754395
+fake energy min/mean/max: 0.1277349293231964 2.2847111225128174 5.393771171569824
+real abs mean: 0.010528894141316414
+fake abs mean: 0.009325351566076279
+real nonzero ratio: 0.022689076140522957
+fake nonzero ratio: 0.024249698966741562
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.002298595616593957
+energy_loss: 2.136753797531128
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.002136753872036934
+sparsity_loss: 0.009325351566076279
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 9.325351129518822e-05
+gen_loss total: 0.004528602585196495
+  Средний loss критика: -0.0007
+  Средний loss генератора: 0.0027
+  Средний adv loss генератора: 0.0008
+  Средний energy loss генератора: 1.8430
+  Средний weighted energy loss генератора: 0.0018
+  Grad norm критика: 0.0232
+  Grad norm генератора: 0.0485
+  D(real) среднее: -0.0134
+  D(fake) среднее: -0.0142
+  loss: 0.0007
+epochs done: 7
+ 50%|████▉     | 50/101 [00:03<00:03, 13.45it/s]
+
+=== ENERGY DEBUG ===
+batch_index: 0
+real energy min/mean/max: 0.10573571175336838 2.1198935508728027 5.524256706237793
+fake energy min/mean/max: 0.048093583434820175 2.6734652519226074 6.0836687088012695
+real abs mean: 0.008652624674141407
+fake abs mean: 0.010912103578448296
+real nonzero ratio: 0.01795918308198452
+fake nonzero ratio: 0.027142856270074844
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: -4.220710980007425e-05
+energy_loss: 2.0199217796325684
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.0020199217833578587
+sparsity_loss: 0.010912103578448296
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 0.00010912103607552126
+gen_loss total: 0.002086835680529475
+
+=== ENERGY DEBUG ===
+batch_index: 50
+real energy min/mean/max: 0.13497474789619446 2.1124908924102783 6.461338043212891
+fake energy min/mean/max: 0.0 2.0405006408691406 5.402441024780273
+real abs mean: 0.008622412569820881
+fake abs mean: 0.008328573778271675
+real nonzero ratio: 0.01869387738406658
+fake nonzero ratio: 0.020938774570822716
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.0005831650923937559
+energy_loss: 1.3076165914535522
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.0013076167088001966
+sparsity_loss: 0.008328573778271675
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 8.328573312610388e-05
+gen_loss total: 0.0019740676507353783
+
+=== ENERGY DEBUG ===
+batch_index: 100
+real energy min/mean/max: 0.015381497330963612 2.063603162765503 5.665926933288574
+fake energy min/mean/max: 0.0 2.4741008281707764 5.059098243713379
+real abs mean: 0.008422869257628918
+fake abs mean: 0.010098369792103767
+real nonzero ratio: 0.017767107114195824
+fake nonzero ratio: 0.02448979578912258
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.00013228636817075312
+energy_loss: 1.7582231760025024
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.0017582232831045985
+sparsity_loss: 0.010098369792103767
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 0.00010098369239130989
+gen_loss total: 0.001991493394598365
+  Средний loss критика: -0.0004
+  Средний loss генератора: 0.0023
+  Средний adv loss генератора: 0.0004
+  Средний energy loss генератора: 1.7784
+  Средний weighted energy loss генератора: 0.0018
+  Grad norm критика: 0.0232
+  Grad norm генератора: 0.0421
+  D(real) среднее: -0.0236
+  D(fake) среднее: -0.0241
+  loss: 0.0004
+epochs done: 8
+ 50%|████▉     | 50/101 [00:04<00:03, 13.51it/s]
+
+=== ENERGY DEBUG ===
+batch_index: 0
+real energy min/mean/max: 0.03862160071730614 1.9696455001831055 6.2310333251953125
+fake energy min/mean/max: 0.0 2.0255792140960693 5.1491594314575195
+real abs mean: 0.008039369247853756
+fake abs mean: 0.00826767086982727
+real nonzero ratio: 0.01583673432469368
+fake nonzero ratio: 0.021877549588680267
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.001057045185007155
+energy_loss: 1.0883793830871582
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.0010883794166147709
+sparsity_loss: 0.00826767086982727
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 8.267670636996627e-05
+gen_loss total: 0.002228101249784231
+
+=== ENERGY DEBUG ===
+batch_index: 50
+real energy min/mean/max: 0.011855199001729488 2.061904191970825 7.513887882232666
+fake energy min/mean/max: 0.0 2.2577829360961914 6.481016635894775
+real abs mean: 0.008415935561060905
+fake abs mean: 0.009215439669787884
+real nonzero ratio: 0.016897957772016525
+fake nonzero ratio: 0.02236734703183174
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.0006789948092773557
+energy_loss: 1.7360488176345825
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.0017360489582642913
+sparsity_loss: 0.009215439669787884
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 9.215439786203206e-05
+gen_loss total: 0.0025071981362998486
+
+=== ENERGY DEBUG ===
+batch_index: 100
+real energy min/mean/max: 0.06066536158323288 2.3997747898101807 6.258686542510986
+fake energy min/mean/max: 0.15456146001815796 2.1435017585754395 5.838481903076172
+real abs mean: 0.009794999845325947
+fake abs mean: 0.008748986758291721
+real nonzero ratio: 0.018487395718693733
+fake nonzero ratio: 0.020888354629278183
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: -0.0002085149026243016
+energy_loss: 1.9276018142700195
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.0019276018720120192
+sparsity_loss: 0.008748986758291721
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 8.748986874707043e-05
+gen_loss total: 0.0018065768526867032
+  Средний loss критика: -0.0002
+  Средний loss генератора: 0.0020
+  Средний adv loss генератора: 0.0003
+  Средний energy loss генератора: 1.6201
+  Средний weighted energy loss генератора: 0.0016
+  Grad norm критика: 0.0134
+  Grad norm генератора: 0.0308
+  D(real) среднее: -0.0039
+  D(fake) среднее: -0.0045
+  loss: 0.0002
+epochs done: 9
+ 49%|████▊     | 49/101 [00:04<00:05, 10.22it/s]
+
+=== ENERGY DEBUG ===
+batch_index: 0
+real energy min/mean/max: 0.06792674213647842 2.0986709594726562 7.0904645919799805
+fake energy min/mean/max: 0.0 2.250242233276367 6.324810028076172
+real abs mean: 0.00856600422412157
+fake abs mean: 0.009184662252664566
+real nonzero ratio: 0.016326529905200005
+fake nonzero ratio: 0.024612244218587875
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.00012578202586155385
+energy_loss: 1.723795771598816
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.001723795896396041
+sparsity_loss: 0.009184662252664566
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 9.184661757899448e-05
+gen_loss total: 0.0019414244452491403
+
+=== ENERGY DEBUG ===
+batch_index: 50
+real energy min/mean/max: 0.007807845715433359 2.326141595840454 8.39780044555664
+fake energy min/mean/max: 0.0 2.500020742416382 6.7357378005981445
+real abs mean: 0.00949445553123951
+fake abs mean: 0.010204166173934937
+real nonzero ratio: 0.019591836258769035
+fake nonzero ratio: 0.028285713866353035
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.0011863330146297812
+energy_loss: 2.725287914276123
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.002725288039073348
+sparsity_loss: 0.010204166173934937
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 0.00010204166028415784
+gen_loss total: 0.004013662692159414
+
+=== ENERGY DEBUG ===
+batch_index: 100
+real energy min/mean/max: 0.21160145103931427 2.2296462059020996 5.1131792068481445
+fake energy min/mean/max: 0.31195029616355896 2.864140033721924 6.814424514770508
+real abs mean: 0.0091005964204669
+fake abs mean: 0.011690366081893444
+real nonzero ratio: 0.019327731803059578
+fake nonzero ratio: 0.026050420477986336
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: -0.000687123741954565
+energy_loss: 1.8136790990829468
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.0018136792350560427
+sparsity_loss: 0.011690366081893444
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 0.00011690365499816835
+gen_loss total: 0.0012434591772034764
+  Средний loss критика: -0.0002
+  Средний loss генератора: 0.0020
+  Средний adv loss генератора: 0.0003
+  Средний energy loss генератора: 1.6412
+  Средний weighted energy loss генератора: 0.0016
+  Grad norm критика: 0.0136
+  Grad norm генератора: 0.0312
+  D(real) среднее: 0.0016
+  D(fake) среднее: 0.0023
+  loss: 0.0002
+epochs done: 10
+ 49%|████▊     | 49/101 [00:03<00:03, 13.50it/s]
+
+=== ENERGY DEBUG ===
+batch_index: 0
+real energy min/mean/max: 0.005878291558474302 2.0275228023529053 7.002849578857422
+fake energy min/mean/max: 0.0 2.6454596519470215 5.74880313873291
+real abs mean: 0.00827560294419527
+fake abs mean: 0.010797793976962566
+real nonzero ratio: 0.0173469390720129
+fake nonzero ratio: 0.024816324934363365
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: -0.00016428458911832422
+energy_loss: 1.825183629989624
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.0018251837464049459
+sparsity_loss: 0.010797793976962566
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 0.00010797793947858736
+gen_loss total: 0.0017688770312815905
+
+=== ENERGY DEBUG ===
+batch_index: 50
+real energy min/mean/max: 0.014078758656978607 2.1010329723358154 6.672504425048828
+fake energy min/mean/max: 0.0 2.0616111755371094 6.393344879150391
+real abs mean: 0.00857564527541399
+fake abs mean: 0.008414738811552525
+real nonzero ratio: 0.01775510050356388
+fake nonzero ratio: 0.02048979513347149
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: -0.0002196572459070012
+energy_loss: 1.3886703252792358
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.0013886704109609127
+sparsity_loss: 0.008414738811552525
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 8.414738840656355e-05
+gen_loss total: 0.001253160648047924
+
+=== ENERGY DEBUG ===
+batch_index: 100
+real energy min/mean/max: 0.009944015182554722 2.4233434200286865 6.762910842895508
+fake energy min/mean/max: 0.2560945451259613 2.42565655708313 5.2248430252075195
+real abs mean: 0.009891198016703129
+fake abs mean: 0.009900638833642006
+real nonzero ratio: 0.017767107114195824
+fake nonzero ratio: 0.023169267922639847
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.000573870143853128
+energy_loss: 2.10486102104187
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.002104861196130514
+sparsity_loss: 0.009900638833642006
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 9.900638542603701e-05
+gen_loss total: 0.0027777377981692553
+  Средний loss критика: -0.0003
+  Средний loss генератора: 0.0021
+  Средний adv loss генератора: 0.0003
+  Средний energy loss генератора: 1.6493
+  Средний weighted energy loss генератора: 0.0016
+  Grad norm критика: 0.0158
+  Grad norm генератора: 0.0310
+  D(real) среднее: 0.0010
+  D(fake) среднее: 0.0006
+  loss: 0.0003
+9it [01:22,  9.18s/it]
+9it [00:50,  5.63s/it]
+epochs done: 11
+/content/drive/MyDrive/GAN_project/visualization_aux/common.py:127: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  plt.tight_layout()
+ 49%|████▊     | 49/101 [00:03<00:03, 13.59it/s]
+
+=== ENERGY DEBUG ===
+batch_index: 0
+real energy min/mean/max: 0.03309723362326622 2.1812548637390137 8.375937461853027
+fake energy min/mean/max: 0.0 2.58571720123291 7.115355491638184
+real abs mean: 0.008903080597519875
+fake abs mean: 0.010553947649896145
+real nonzero ratio: 0.017510203644633293
+fake nonzero ratio: 0.023102039471268654
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.0002850350574590266
+energy_loss: 1.837939739227295
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.0018379398388788104
+sparsity_loss: 0.010553947649896145
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 0.00010553947504376993
+gen_loss total: 0.002228514524176717
+
+=== ENERGY DEBUG ===
+batch_index: 50
+real energy min/mean/max: 0.05044224485754967 2.1663615703582764 7.4446001052856445
+fake energy min/mean/max: 0.0 2.1735544204711914 5.797347068786621
+real abs mean: 0.008842292241752148
+fake abs mean: 0.008871649391949177
+real nonzero ratio: 0.01832653023302555
+fake nonzero ratio: 0.02277550846338272
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.0006034584948793054
+energy_loss: 1.7296754121780396
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.0017296754522249103
+sparsity_loss: 0.008871649391949177
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 8.871649333741516e-05
+gen_loss total: 0.002421850338578224
+
+=== ENERGY DEBUG ===
+batch_index: 100
+real energy min/mean/max: 0.07852634787559509 2.06494402885437 5.35180139541626
+fake energy min/mean/max: 0.33303508162498474 2.4941775798797607 9.271309852600098
+real abs mean: 0.008428343571722507
+fake abs mean: 0.010180317796766758
+real nonzero ratio: 0.017527010291814804
+fake nonzero ratio: 0.026770707219839096
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: -9.436245454708114e-05
+energy_loss: 3.328451633453369
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.0033284518867731094
+sparsity_loss: 0.010180317796766758
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 0.00010180317622143775
+gen_loss total: 0.003335892455652356
+  Средний loss критика: -0.0002
+  Средний loss генератора: 0.0020
+  Средний adv loss генератора: 0.0003
+  Средний energy loss генератора: 1.6356
+  Средний weighted energy loss генератора: 0.0016
+  Grad norm критика: 0.0134
+  Grad norm генератора: 0.0294
+  D(real) среднее: -0.0117
+  D(fake) среднее: -0.0121
+  loss: 0.0002
+9it [01:26,  9.60s/it]
+9it [00:51,  5.75s/it]
+epochs done: 12
+/content/drive/MyDrive/GAN_project/visualization_aux/common.py:127: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  plt.tight_layout()
+ 50%|████▉     | 50/101 [00:05<00:05,  9.08it/s]
+
+=== ENERGY DEBUG ===
+batch_index: 0
+real energy min/mean/max: 0.12429255247116089 2.345471143722534 6.2310333251953125
+fake energy min/mean/max: 0.0 2.234394073486328 5.57996940612793
+real abs mean: 0.009573351591825485
+fake abs mean: 0.009119976311922073
+real nonzero ratio: 0.019959183409810066
+fake nonzero ratio: 0.02359183505177498
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.00040014993282966316
+energy_loss: 1.3522396087646484
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.0013522396329790354
+sparsity_loss: 0.009119976311922073
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 9.119976311922073e-05
+gen_loss total: 0.0018435893580317497
+
+=== ENERGY DEBUG ===
+batch_index: 50
+real energy min/mean/max: 0.03309723362326622 2.2744128704071045 6.732435703277588
+fake energy min/mean/max: 0.00700947642326355 2.4008853435516357 6.9624128341674805
+real abs mean: 0.009283317252993584
+fake abs mean: 0.0097995325922966
+real nonzero ratio: 0.018857141956686974
+fake nonzero ratio: 0.022734692320227623
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.0005775992758572102
+energy_loss: 2.0095512866973877
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.0020095512736588717
+sparsity_loss: 0.0097995325922966
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 9.79953256319277e-05
+gen_loss total: 0.002685145940631628
+
+=== ENERGY DEBUG ===
+batch_index: 100
+real energy min/mean/max: 0.24950239062309265 1.946874976158142 4.143141746520996
+fake energy min/mean/max: 0.171970933675766 2.026665687561035 4.633984565734863
+real abs mean: 0.007946427911520004
+fake abs mean: 0.008272104896605015
+real nonzero ratio: 0.01572629064321518
+fake nonzero ratio: 0.022328931838274002
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.0011362979421392083
+energy_loss: 0.7835046052932739
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.0007835046271793544
+sparsity_loss: 0.008272104896605015
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 8.27210460556671e-05
+gen_loss total: 0.0020025235135108232
+  Средний loss критика: -0.0002
+  Средний loss генератора: 0.0021
+  Средний adv loss генератора: 0.0003
+  Средний energy loss генератора: 1.6183
+  Средний weighted energy loss генератора: 0.0016
+  Grad norm критика: 0.0155
+  Grad norm генератора: 0.0306
+  D(real) среднее: -0.0156
+  D(fake) среднее: -0.0163
+  loss: 0.0002
+9it [01:26,  9.67s/it]
+9it [00:48,  5.44s/it]
+epochs done: 13
+/content/drive/MyDrive/GAN_project/visualization_aux/common.py:127: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  plt.tight_layout()
+ 50%|████▉     | 50/101 [00:05<00:03, 13.01it/s]
+
+=== ENERGY DEBUG ===
+batch_index: 0
+real energy min/mean/max: 0.007363545708358288 2.1783533096313477 6.965449810028076
+fake energy min/mean/max: 0.0 2.1068296432495117 5.641567230224609
+real abs mean: 0.008891237899661064
+fake abs mean: 0.008599305525422096
+real nonzero ratio: 0.018816325813531876
+fake nonzero ratio: 0.023265305906534195
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.001407360308803618
+energy_loss: 1.8186047077178955
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.0018186047673225403
+sparsity_loss: 0.008599305525422096
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 8.5993051470723e-05
+gen_loss total: 0.0033119579311460257
+
+=== ENERGY DEBUG ===
+batch_index: 50
+real energy min/mean/max: 0.02763967588543892 2.143848419189453 6.078694820404053
+fake energy min/mean/max: 0.0 2.593705415725708 6.744652271270752
+real abs mean: 0.008750402368605137
+fake abs mean: 0.010586552321910858
+real nonzero ratio: 0.018448978662490845
+fake nonzero ratio: 0.02567346766591072
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: -0.0003901625459548086
+energy_loss: 1.9415807723999023
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.0019415809074416757
+sparsity_loss: 0.010586552321910858
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 0.0001058655179804191
+gen_loss total: 0.001657283864915371
+
+=== ENERGY DEBUG ===
+batch_index: 100
+real energy min/mean/max: 0.11789318174123764 2.147205114364624 5.280120849609375
+fake energy min/mean/max: 0.0895126461982727 2.5063893795013428 4.968618392944336
+real abs mean: 0.00876410212367773
+fake abs mean: 0.01023016031831503
+real nonzero ratio: 0.01740696281194687
+fake nonzero ratio: 0.022929171100258827
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.0013807805953547359
+energy_loss: 1.1283892393112183
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.0011283892672508955
+sparsity_loss: 0.01023016031831503
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 0.00010230160114588216
+gen_loss total: 0.002611471340060234
+  Средний loss критика: -0.0003
+  Средний loss генератора: 0.0021
+  Средний adv loss генератора: 0.0003
+  Средний energy loss генератора: 1.6738
+  Средний weighted energy loss генератора: 0.0017
+  Grad norm критика: 0.0157
+  Grad norm генератора: 0.0301
+  D(real) среднее: -0.0063
+  D(fake) среднее: -0.0094
+  loss: 0.0003
+9it [01:25,  9.51s/it]
+9it [00:51,  5.78s/it]
+epochs done: 14
+/content/drive/MyDrive/GAN_project/visualization_aux/common.py:127: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  plt.tight_layout()
+ 49%|████▊     | 49/101 [00:03<00:03, 13.49it/s]
+
+=== ENERGY DEBUG ===
+batch_index: 0
+real energy min/mean/max: 0.011855199001729488 2.103886365890503 7.070877552032471
+fake energy min/mean/max: 0.09818996489048004 2.3400630950927734 5.837874412536621
+real abs mean: 0.008587291464209557
+fake abs mean: 0.009551278315484524
+real nonzero ratio: 0.017428571358323097
+fake nonzero ratio: 0.02126530557870865
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.0007056911126710474
+energy_loss: 1.4450165033340454
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.0014450165908783674
+sparsity_loss: 0.009551278315484524
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 9.551278344588354e-05
+gen_loss total: 0.002246220363304019
+
+=== ENERGY DEBUG ===
+batch_index: 50
+real energy min/mean/max: 0.01837168261408806 2.067439556121826 5.617900848388672
+fake energy min/mean/max: 0.0 2.6071434020996094 7.0385026931762695
+real abs mean: 0.008438528515398502
+fake abs mean: 0.010641401633620262
+real nonzero ratio: 0.01718367263674736
+fake nonzero ratio: 0.02742857113480568
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 7.52275445847772e-05
+energy_loss: 1.9054087400436401
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.0019054088043048978
+sparsity_loss: 0.010641401633620262
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 0.00010641401604516432
+gen_loss total: 0.002087050350382924
+
+=== ENERGY DEBUG ===
+batch_index: 100
+real energy min/mean/max: 0.015381497330963612 2.3123972415924072 7.614058494567871
+fake energy min/mean/max: 0.0 2.2932326793670654 7.607152938842773
+real abs mean: 0.009438356384634972
+fake abs mean: 0.009360132738947868
+real nonzero ratio: 0.018007202073931694
+fake nonzero ratio: 0.022569026798009872
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: -0.0005287977401167154
+energy_loss: 2.5695998668670654
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.0025696000084280968
+sparsity_loss: 0.009360132738947868
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 9.360132389701903e-05
+gen_loss total: 0.0021344036795198917
+  Средний loss критика: -0.0003
+  Средний loss генератора: 0.0021
+  Средний adv loss генератора: 0.0004
+  Средний energy loss генератора: 1.6430
+  Средний weighted energy loss генератора: 0.0016
+  Grad norm критика: 0.0185
+  Grad norm генератора: 0.0324
+  D(real) среднее: -0.0096
+  D(fake) среднее: -0.0099
+  loss: 0.0003
+4it [00:46, 11.60s/it]

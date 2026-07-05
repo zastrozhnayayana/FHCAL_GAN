@@ -1,0 +1,389 @@
+_wandb:
+    value:
+        cli_version: 0.28.0
+        e:
+            pgdqb3iq19s9qix5dnez5nwadbm4awho:
+                codePath: my_gan_central_modules.ipynb
+                colab: https://colab.research.google.com/notebook#fileId=1M7z_8-2IW6-mD8HVRHKBkrKbbZNHKM-D
+                cpu_count: 1
+                cpu_count_logical: 2
+                cudaVersion: "13.0"
+                disk:
+                    /:
+                        total: "120942624768"
+                        used: "56364408832"
+                email: elleth956428@gmail.com
+                executable: /usr/bin/python3
+                gpu: Tesla T4
+                gpu_count: 1
+                gpu_nvidia:
+                    - architecture: Turing
+                      cudaCores: 2560
+                      memoryTotal: "16106127360"
+                      name: Tesla T4
+                      uuid: GPU-2d6615b3-481a-d192-e7cc-f4ccb7385d15
+                host: ee11b1709b48
+                memory:
+                    total: "13605830656"
+                os: Linux-6.6.122+-x86_64-with-glibc2.35
+                program: my_gan_central_modules.ipynb
+                python: CPython 3.12.13
+                root: /content/drive/MyDrive/GAN_project
+                startedAt: "2026-07-01T20:03:59.610436Z"
+                writerId: pgdqb3iq19s9qix5dnez5nwadbm4awho
+        m:
+            - "1": 'bin #5: Energy embed. Average PRD-AUC'
+              "5": 2
+              "6":
+                - 1
+                - 3
+              "7": []
+            - "1": epoch
+              "6":
+                - 3
+              "7": []
+            - "1": train/critic/loss
+              "5": 2
+              "6":
+                - 1
+                - 3
+              "7": []
+            - "1": train/generator/adv_loss
+              "5": 2
+              "6":
+                - 1
+                - 3
+              "7": []
+            - "1": 'bin #7: PhysStats Average PRD-AUC'
+              "5": 2
+              "6":
+                - 1
+                - 3
+              "7": []
+            - "1": 'bin #6: PhysStats Average PRD-AUC'
+              "5": 2
+              "6":
+                - 1
+                - 3
+              "7": []
+            - "1": 'bin #8: Energy embed. Average PRD-AUC'
+              "5": 2
+              "6":
+                - 1
+                - 3
+              "7": []
+            - "1": 'bin #0: Energy embed. Average PRD-AUC'
+              "5": 2
+              "6":
+                - 1
+                - 3
+              "7": []
+            - "1": 'bins avg: PhysStats Average PRD-AUC'
+              "5": 2
+              "6":
+                - 1
+                - 3
+              "7": []
+            - "1": 'bin #4: PhysStats Average PRD-AUC'
+              "5": 2
+              "6":
+                - 1
+                - 3
+              "7": []
+            - "1": 'bin #0: PhysStats Average PRD-AUC'
+              "5": 2
+              "6":
+                - 1
+                - 3
+              "7": []
+            - "1": 'bin #2: Energy embed. Average PRD-AUC'
+              "5": 2
+              "6":
+                - 1
+                - 3
+              "7": []
+            - "1": 'bin #3: PhysStats Average PRD-AUC'
+              "5": 2
+              "6":
+                - 1
+                - 3
+              "7": []
+            - "1": 'bin #6: Energy embed. Average PRD-AUC'
+              "5": 2
+              "6":
+                - 1
+                - 3
+              "7": []
+            - "1": 'bin #4: Energy embed. Average PRD-AUC'
+              "5": 2
+              "6":
+                - 1
+                - 3
+              "7": []
+            - "1": Energy PRD PR-AUC
+              "5": 2
+              "6":
+                - 1
+                - 3
+              "7": []
+            - "1": train/generator/loss
+              "5": 2
+              "6":
+                - 1
+                - 3
+              "7": []
+            - "1": 'bin #1: PhysStats Average PRD-AUC'
+              "5": 2
+              "6":
+                - 1
+                - 3
+              "7": []
+            - "1": 'bin #3: Energy embed. Average PRD-AUC'
+              "5": 2
+              "6":
+                - 1
+                - 3
+              "7": []
+            - "1": 'bin #1: Energy embed. Average PRD-AUC'
+              "5": 2
+              "6":
+                - 1
+                - 3
+              "7": []
+            - "1": train/discriminator/grad_norm
+              "5": 2
+              "6":
+                - 1
+                - 3
+              "7": []
+            - "1": train/generator/energy_loss
+              "5": 2
+              "6":
+                - 1
+                - 3
+              "7": []
+            - "1": 'bin #8: PhysStats Average PRD-AUC'
+              "5": 2
+              "6":
+                - 1
+                - 3
+              "7": []
+            - "1": 'bin #5: PhysStats Average PRD-AUC'
+              "5": 2
+              "6":
+                - 1
+                - 3
+              "7": []
+            - "1": 'bin #2: PhysStats Average PRD-AUC'
+              "5": 2
+              "6":
+                - 1
+                - 3
+              "7": []
+            - "1": 'bins avg: Energy embed. Average PRD-AUC'
+              "5": 2
+              "6":
+                - 1
+                - 3
+              "7": []
+            - "1": 'bin #7: Energy embed. Average PRD-AUC'
+              "5": 2
+              "6":
+                - 1
+                - 3
+              "7": []
+            - "1": train/critic/adv_loss
+              "5": 2
+              "6":
+                - 1
+                - 3
+              "7": []
+            - "1": train/regularizer/loss
+              "5": 2
+              "6":
+                - 1
+                - 3
+              "7": []
+            - "1": train/generator/grad_norm
+              "5": 2
+              "6":
+                - 1
+                - 3
+              "7": []
+            - "1": PhysStats PRD PR-AUC
+              "5": 2
+              "6":
+                - 1
+                - 3
+              "7": []
+            - "1": train/generator/weighted_energy_loss
+              "5": 2
+              "6":
+                - 1
+                - 3
+              "7": []
+        python_version: 3.12.13
+        t:
+            "1":
+                - 1
+                - 5
+                - 41
+                - 53
+            "2":
+                - 1
+                - 5
+                - 41
+                - 53
+            "3":
+                - 2
+                - 7
+                - 13
+                - 41
+            "4": 3.12.13
+            "5": 0.28.0
+            "8":
+                - 1
+                - 12
+            "12": 0.28.0
+            "13": linux-x86_64
+        visualize:
+            Cluster Longitudual Width:
+                panel_config:
+                    fieldSettings:
+                        groupKeys: type
+                        title: Cluster Longitudual Width
+                        value: value
+                    panelDefId: trickman/my_histogram
+                    transform:
+                        name: tableWithLeafColNames
+                    userQuery:
+                        queryFields:
+                            - args:
+                                - name: runSets
+                                  value: ${runSets}
+                              fields:
+                                - fields: []
+                                  name: id
+                                - fields: []
+                                  name: name
+                                - fields: []
+                                  name: _defaultColorIndex
+                                - args:
+                                    - name: tableKey
+                                      value: Cluster Longitudual Width_table
+                                  fields: []
+                                  name: summaryTable
+                              name: runSets
+                panel_type: Vega2
+            Cluster Transverse Width:
+                panel_config:
+                    fieldSettings:
+                        groupKeys: type
+                        title: Cluster Transverse Width
+                        value: value
+                    panelDefId: trickman/my_histogram
+                    transform:
+                        name: tableWithLeafColNames
+                    userQuery:
+                        queryFields:
+                            - args:
+                                - name: runSets
+                                  value: ${runSets}
+                              fields:
+                                - fields: []
+                                  name: id
+                                - fields: []
+                                  name: name
+                                - fields: []
+                                  name: _defaultColorIndex
+                                - args:
+                                    - name: tableKey
+                                      value: Cluster Transverse Width_table
+                                  fields: []
+                                  name: summaryTable
+                              name: runSets
+                panel_type: Vega2
+            Critic values:
+                panel_config:
+                    fieldSettings:
+                        groupKeys: type
+                        title: Critic values
+                        value: value
+                    panelDefId: trickman/my_histogram
+                    transform:
+                        name: tableWithLeafColNames
+                    userQuery:
+                        queryFields:
+                            - args:
+                                - name: runSets
+                                  value: ${runSets}
+                              fields:
+                                - fields: []
+                                  name: id
+                                - fields: []
+                                  name: name
+                                - fields: []
+                                  name: _defaultColorIndex
+                                - args:
+                                    - name: tableKey
+                                      value: Critic values_table
+                                  fields: []
+                                  name: summaryTable
+                              name: runSets
+                panel_type: Vega2
+            Longitudual Cluster Asymmetry:
+                panel_config:
+                    fieldSettings:
+                        groupKeys: type
+                        title: Longitudual Cluster Asymmetry
+                        value: value
+                    panelDefId: trickman/my_histogram
+                    transform:
+                        name: tableWithLeafColNames
+                    userQuery:
+                        queryFields:
+                            - args:
+                                - name: runSets
+                                  value: ${runSets}
+                              fields:
+                                - fields: []
+                                  name: id
+                                - fields: []
+                                  name: name
+                                - fields: []
+                                  name: _defaultColorIndex
+                                - args:
+                                    - name: tableKey
+                                      value: Longitudual Cluster Asymmetry_table
+                                  fields: []
+                                  name: summaryTable
+                              name: runSets
+                panel_type: Vega2
+            Transverse Cluster Asymmetry:
+                panel_config:
+                    fieldSettings:
+                        groupKeys: type
+                        title: Transverse Cluster Asymmetry
+                        value: value
+                    panelDefId: trickman/my_histogram
+                    transform:
+                        name: tableWithLeafColNames
+                    userQuery:
+                        queryFields:
+                            - args:
+                                - name: runSets
+                                  value: ${runSets}
+                              fields:
+                                - fields: []
+                                  name: id
+                                - fields: []
+                                  name: name
+                                - fields: []
+                                  name: _defaultColorIndex
+                                - args:
+                                    - name: tableKey
+                                      value: Transverse Cluster Asymmetry_table
+                                  fields: []
+                                  name: summaryTable
+                              name: runSets
+                panel_type: Vega2

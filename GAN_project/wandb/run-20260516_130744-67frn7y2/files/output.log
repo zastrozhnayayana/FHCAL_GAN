@@ -1,0 +1,65 @@
+ 82%|████████▏ | 50/61 [00:35<00:08,  1.30it/s]
+
+=== ENERGY DEBUG ===
+batch_index: 0
+real energy min/mean/max: 0.12648849189281464 6.517486095428467 19.710100173950195
+fake energy min/mean/max: 79.770751953125 102.33393859863281 132.78524780273438
+real abs mean: 0.010345215909183025
+fake abs mean: 0.16243481636047363
+real nonzero ratio: 0.020476190373301506
+fake nonzero ratio: 0.495888888835907
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.004083562642335892
+energy_loss: 9321.509765625
+lambda_energy: 0.001
+lambda_energy * energy_loss: 9.321510314941406
+sparsity_loss: 0.16243481636047363
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 0.0016243481077253819
+gen_loss total: 9.327218055725098
+
+=== ENERGY DEBUG ===
+batch_index: 50
+real energy min/mean/max: 0.41400328278541565 6.5742878913879395 16.358680725097656
+fake energy min/mean/max: 2.3544492721557617 7.598485946655273 15.450716018676758
+real abs mean: 0.010435376316308975
+fake abs mean: 0.012061088345944881
+real nonzero ratio: 0.020825397223234177
+fake nonzero ratio: 0.06230158731341362
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.06590593606233597
+energy_loss: 11.30026626586914
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.011300266720354557
+sparsity_loss: 0.012061088345944881
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 0.00012061087909387425
+gen_loss total: 0.07732681185007095
+  Средний loss критика: -0.0547
+  Средний loss генератора: 0.2360
+  Средний adv loss генератора: 0.0552
+  Средний energy loss генератора: 180.6195
+  Средний weighted energy loss генератора: 0.1806
+  Grad norm критика: 0.3421
+  Grad norm генератора: 1.2361
+  D(real) среднее: -0.1331
+  D(fake) среднее: -0.1996
+  loss: 0.0547
+epochs done: 1
+^C
+Перезагружен: pipeline.gan
+Перезагружен: pipeline.physical_metrics
+Перезагружен: pipeline.physical_metrics.calogan_metrics
+✅ Загружен обученный эмбеддер
+Перезагружен: pipeline.physical_metrics.calogan_prd
+Перезагружен: pipeline.physical_metrics.prd_score
+Все модули перезагружены!
+Перезагружен: pipeline.gan
+Перезагружен: pipeline.physical_metrics
+Перезагружен: pipeline.physical_metrics.calogan_metrics
+✅ Загружен обученный эмбеддер
+Перезагружен: pipeline.physical_metrics.calogan_prd
+Перезагружен: pipeline.physical_metrics.prd_score
+Все модули перезагружены!

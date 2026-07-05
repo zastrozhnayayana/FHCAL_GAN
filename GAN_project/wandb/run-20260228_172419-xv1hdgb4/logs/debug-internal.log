@@ -1,0 +1,13 @@
+{"time":"2026-02-28T17:24:21.743966737Z","level":"INFO","msg":"stream: starting","core version":"0.25.0"}
+{"time":"2026-02-28T17:24:22.031516317Z","level":"INFO","msg":"stream: created new stream","id":"xv1hdgb4"}
+{"time":"2026-02-28T17:24:22.032202385Z","level":"INFO","msg":"handler: started","stream_id":"xv1hdgb4"}
+{"time":"2026-02-28T17:24:22.046584345Z","level":"INFO","msg":"stream: started","id":"xv1hdgb4"}
+{"time":"2026-02-28T17:24:22.047033393Z","level":"INFO","msg":"writer: started","stream_id":"xv1hdgb4"}
+{"time":"2026-02-28T17:24:22.047088426Z","level":"INFO","msg":"sender: started","stream_id":"xv1hdgb4"}
+{"time":"2026-02-28T17:25:25.606467426Z","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/elleth956428-hse-university/GAN_DEMO/xv1hdgb4/file_stream","body":"\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>502 Server Error</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Server Error</h1>\n<h2>The server encountered a temporary error and could not complete your request.<p>Please try again in 30 seconds.</h2>\n<h2></h2>\n</body></html>\n"}
+{"time":"2026-02-28T17:47:49.455294648Z","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2026-02-28T17:47:49.595940694Z","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2026-02-28T17:47:49.620320295Z","level":"INFO","msg":"stream: closing","id":"xv1hdgb4"}
+{"time":"2026-02-28T17:47:49.620676007Z","level":"INFO","msg":"handler: closed","stream_id":"xv1hdgb4"}
+{"time":"2026-02-28T17:47:49.624849968Z","level":"INFO","msg":"sender: closed","stream_id":"xv1hdgb4"}
+{"time":"2026-02-28T17:47:49.625206113Z","level":"INFO","msg":"stream: closed","id":"xv1hdgb4"}

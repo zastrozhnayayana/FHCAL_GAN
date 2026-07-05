@@ -1,0 +1,6 @@
+---
+# this file contains paths and filenames
+# it is assumed to be setup once for an environment
+data_dir_path: "./data"
+experiments:
+  experiments_dir: "./experiments"

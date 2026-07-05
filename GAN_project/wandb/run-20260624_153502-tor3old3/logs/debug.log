@@ -1,0 +1,38 @@
+2026-06-24 15:35:03,002 INFO    MainThread:822 [wandb_setup.py:_flush():81] Current SDK version is 0.27.2
+2026-06-24 15:35:03,005 INFO    MainThread:822 [wandb_setup.py:_flush():81] Configure stats pid to 822
+2026-06-24 15:35:03,005 INFO    MainThread:822 [wandb_setup.py:_flush():81] Loading settings from environment variables
+2026-06-24 15:35:03,006 INFO    MainThread:822 [wandb_init.py:setup_run_log_directory():723] Logging user logs to /content/drive/MyDrive/GAN_project/wandb/run-20260624_153502-tor3old3/logs/debug.log
+2026-06-24 15:35:03,007 INFO    MainThread:822 [wandb_init.py:setup_run_log_directory():724] Logging internal logs to /content/drive/MyDrive/GAN_project/wandb/run-20260624_153502-tor3old3/logs/debug-internal.log
+2026-06-24 15:35:03,008 INFO    MainThread:822 [wandb_init.py:monkeypatch_ipython():642] configuring jupyter hooks <wandb.sdk.wandb_init._WandbInit object at 0x7fc5301c1550>
+2026-06-24 15:35:03,009 INFO    MainThread:822 [wandb_init.py:init():766] calling init triggers
+2026-06-24 15:35:03,009 INFO    MainThread:822 [wandb_init.py:init():771] wandb.init called with sweep_config: {}
+config: {'_wandb': {}}
+2026-06-24 15:35:03,009 INFO    MainThread:822 [wandb_init.py:init():814] starting backend
+2026-06-24 15:35:03,009 INFO    MainThread:822 [wandb_init.py:init():829] sending inform_init request
+2026-06-24 15:35:03,227 INFO    MainThread:822 [wandb_init.py:init():834] backend started and connected
+2026-06-24 15:35:03,235 INFO    MainThread:822 [wandb_run.py:_label_probe_notebook():1276] probe notebook
+2026-06-24 15:35:03,971 INFO    MainThread:822 [wandb_init.py:init():904] updated telemetry
+2026-06-24 15:35:04,020 INFO    MainThread:822 [wandb_init.py:init():927] communicating run to backend with 90.0 second timeout
+2026-06-24 15:35:04,424 INFO    MainThread:822 [wandb_init.py:init():972] starting run threads in backend
+2026-06-24 15:35:05,591 INFO    MainThread:822 [wandb_run.py:_console_start():2523] atexit reg
+2026-06-24 15:35:05,592 INFO    MainThread:822 [wandb_run.py:_redirect():2373] redirect: wrap_raw
+2026-06-24 15:35:05,592 INFO    MainThread:822 [wandb_run.py:_redirect():2442] Wrapping output streams.
+2026-06-24 15:35:05,596 INFO    MainThread:822 [wandb_run.py:_redirect():2465] Redirects installed.
+2026-06-24 15:35:05,605 INFO    MainThread:822 [wandb_init.py:init():1010] run started, returning control to user process
+2026-06-24 15:37:57,196 INFO    MainThread:822 [wandb_init.py:_post_run_cell_hook():612] [no run ID] resuming backend
+2026-06-24 15:38:55,271 INFO    MainThread:822 [jupyter.py:save_ipynb():362] [no run ID] not saving jupyter notebook
+2026-06-24 15:38:55,271 INFO    MainThread:822 [wandb_init.py:_pre_run_cell_hook():601] [no run ID] pausing backend
+2026-06-24 15:38:55,452 INFO    MainThread:822 [wandb_init.py:_post_run_cell_hook():612] [no run ID] resuming backend
+2026-06-24 15:39:02,423 INFO    MainThread:822 [jupyter.py:save_ipynb():362] [no run ID] not saving jupyter notebook
+2026-06-24 15:39:02,424 INFO    MainThread:822 [wandb_init.py:_pre_run_cell_hook():601] [no run ID] pausing backend
+2026-06-24 15:39:02,432 INFO    MainThread:822 [wandb_init.py:_post_run_cell_hook():612] [no run ID] resuming backend
+2026-06-24 15:39:16,279 INFO    MainThread:822 [jupyter.py:save_ipynb():362] [no run ID] not saving jupyter notebook
+2026-06-24 15:39:16,281 INFO    MainThread:822 [wandb_init.py:_pre_run_cell_hook():601] [no run ID] pausing backend
+2026-06-24 15:39:16,282 INFO    MainThread:822 [wandb_run.py:_finish():2285] finishing run elleth956428-hse-university/GAN_DEMO/tor3old3
+2026-06-24 15:39:16,283 INFO    MainThread:822 [jupyter.py:save_history():435] not saving jupyter history
+2026-06-24 15:39:16,283 INFO    MainThread:822 [jupyter.py:save_ipynb():362] not saving jupyter notebook
+2026-06-24 15:39:16,283 INFO    MainThread:822 [wandb_init.py:_jupyter_teardown():627] cleaning up jupyter logic
+2026-06-24 15:39:16,283 INFO    MainThread:822 [wandb_run.py:_atexit_cleanup():2490] got exitcode: 0
+2026-06-24 15:39:16,285 INFO    MainThread:822 [wandb_run.py:_restore():2472] restore
+2026-06-24 15:39:16,285 INFO    MainThread:822 [wandb_run.py:_restore():2478] restore done
+2026-06-24 15:39:16,914 INFO    MainThread:822 [wandb_run.py:_footer_sync_info():3891] logging synced files

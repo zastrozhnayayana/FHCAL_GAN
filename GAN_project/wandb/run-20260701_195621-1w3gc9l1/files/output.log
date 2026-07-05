@@ -1,0 +1,241 @@
+ 50%|████▉     | 50/101 [00:03<00:03, 13.98it/s]
+
+=== ENERGY DEBUG ===
+batch_index: 0
+real energy min/mean/max: 0.12143813073635101 2.1811954975128174 8.10257339477539
+fake energy min/mean/max: 0.04222998768091202 2.226306676864624 5.987282752990723
+real abs mean: 0.00890283938497305
+fake abs mean: 0.009086966514587402
+real nonzero ratio: 0.017999999225139618
+fake nonzero ratio: 0.023306122049689293
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.0009540204773657024
+energy_loss: 1.733490228652954
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.001733490265905857
+sparsity_loss: 0.009086966514587402
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 9.086966019822285e-05
+gen_loss total: 0.00277838041074574
+
+=== ENERGY DEBUG ===
+batch_index: 50
+real energy min/mean/max: 0.01837168261408806 2.184701681137085 6.341779708862305
+fake energy min/mean/max: 0.0 2.317902088165283 5.848674774169922
+real abs mean: 0.008917151018977165
+fake abs mean: 0.009460825473070145
+real nonzero ratio: 0.017877550795674324
+fake nonzero ratio: 0.022530611604452133
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: -3.308974191895686e-05
+energy_loss: 1.737876057624817
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.001737876096740365
+sparsity_loss: 0.009460825473070145
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 9.460825094720349e-05
+gen_loss total: 0.0017993946094065905
+
+=== ENERGY DEBUG ===
+batch_index: 100
+real energy min/mean/max: 0.5012697577476501 2.6186349391937256 4.899104118347168
+fake energy min/mean/max: 0.016753563657402992 2.221236228942871 4.927445888519287
+real abs mean: 0.010688305832445621
+fake abs mean: 0.009066270664334297
+real nonzero ratio: 0.021128451451659203
+fake nonzero ratio: 0.024129651486873627
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: -0.0001376411528326571
+energy_loss: 1.3677314519882202
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.001367731485515833
+sparsity_loss: 0.009066270664334297
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 9.066270285984501e-05
+gen_loss total: 0.0013207531301304698
+  Средний loss критика: -0.0004
+  Средний loss генератора: 0.0023
+  Средний adv loss генератора: 0.0005
+  Средний energy loss генератора: 1.6663
+  Средний weighted energy loss генератора: 0.0017
+  Grad norm критика: 0.0166
+  Grad norm генератора: 0.0356
+  D(real) среднее: -0.1250
+  D(fake) среднее: -0.1248
+  loss: 0.0004
+epochs done: 10
+ 50%|████▉     | 50/101 [00:04<00:03, 13.64it/s]
+
+=== ENERGY DEBUG ===
+batch_index: 0
+real energy min/mean/max: 0.018353451043367386 2.1077022552490234 6.762910842895508
+fake energy min/mean/max: 0.0 2.261464834213257 6.5568389892578125
+real abs mean: 0.008602865971624851
+fake abs mean: 0.009230468422174454
+real nonzero ratio: 0.018408162519335747
+fake nonzero ratio: 0.02722448855638504
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.00023093311756383628
+energy_loss: 1.5096009969711304
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.001509601017460227
+sparsity_loss: 0.009230468422174454
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 9.230468276655301e-05
+gen_loss total: 0.0018328387523069978
+
+=== ENERGY DEBUG ===
+batch_index: 50
+real energy min/mean/max: 0.05328216031193733 2.19596529006958 6.54442024230957
+fake energy min/mean/max: 0.027135005220770836 2.4954917430877686 6.237785816192627
+real abs mean: 0.008963122963905334
+fake abs mean: 0.010185680352151394
+real nonzero ratio: 0.018244897946715355
+fake nonzero ratio: 0.026938773691654205
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: -0.0001216727469000034
+energy_loss: 1.4270998239517212
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.0014270999236032367
+sparsity_loss: 0.010185680352151394
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 0.00010185680002905428
+gen_loss total: 0.0014072839403524995
+
+=== ENERGY DEBUG ===
+batch_index: 100
+real energy min/mean/max: 0.10151173919439316 2.019618272781372 5.028526306152344
+fake energy min/mean/max: 0.0 2.203688859939575 4.839605331420898
+real abs mean: 0.008243340067565441
+fake abs mean: 0.008994648233056068
+real nonzero ratio: 0.01692677102982998
+fake nonzero ratio: 0.02400960400700569
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.0002441824763081968
+energy_loss: 1.1155716180801392
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.0011155717074871063
+sparsity_loss: 0.008994648233056068
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 8.994647942017764e-05
+gen_loss total: 0.001449700677767396
+  Средний loss критика: -0.0002
+  Средний loss генератора: 0.0019
+  Средний adv loss генератора: 0.0002
+  Средний energy loss генератора: 1.6211
+  Средний weighted energy loss генератора: 0.0016
+  Grad norm критика: 0.0149
+  Grad norm генератора: 0.0304
+  D(real) среднее: -0.1332
+  D(fake) среднее: -0.1330
+  loss: 0.0002
+/content/drive/MyDrive/GAN_project/pipeline/physical_metrics/calogan_metrics.py:20: RuntimeWarning: divide by zero encountered in divide
+  line_func = lambda x: (x - points_0[..., np.newaxis, np.newaxis]) / (ps[:, 0] / ps[:, 1])[..., np.newaxis, np.newaxis] + points_1[..., np.newaxis, np.newaxis]
+/content/drive/MyDrive/GAN_project/pipeline/physical_metrics/calogan_metrics.py:69: RuntimeWarning: divide by zero encountered in divide
+  line_func = lambda x: (x - points_0[..., np.newaxis, np.newaxis]) / (ps[:, 1] / ps[:, 0])[..., np.newaxis, np.newaxis] + points_1[..., np.newaxis, np.newaxis]
+/content/drive/MyDrive/GAN_project/pipeline/physical_metrics/calogan_metrics.py:67: RuntimeWarning: divide by zero encountered in divide
+  line_func = lambda x: -(x - points_0[..., np.newaxis, np.newaxis]) / (ps[:, 0] / ps[:, 1])[..., np.newaxis, np.newaxis] + points_1[..., np.newaxis, np.newaxis]
+9it [01:25,  9.46s/it]
+/content/drive/MyDrive/GAN_project/pipeline/physical_metrics/calogan_metrics.py:22: RuntimeWarning: divide by zero encountered in divide
+  line_func = lambda x: -(x - points_0[..., np.newaxis, np.newaxis]) / (ps[:, 1] / ps[:, 0])[..., np.newaxis, np.newaxis] + points_1[..., np.newaxis, np.newaxis]
+/content/drive/MyDrive/GAN_project/pipeline/physical_metrics/calogan_metrics.py:20: RuntimeWarning: divide by zero encountered in divide
+  line_func = lambda x: (x - points_0[..., np.newaxis, np.newaxis]) / (ps[:, 0] / ps[:, 1])[..., np.newaxis, np.newaxis] + points_1[..., np.newaxis, np.newaxis]
+/content/drive/MyDrive/GAN_project/pipeline/physical_metrics/calogan_metrics.py:69: RuntimeWarning: divide by zero encountered in divide
+  line_func = lambda x: (x - points_0[..., np.newaxis, np.newaxis]) / (ps[:, 1] / ps[:, 0])[..., np.newaxis, np.newaxis] + points_1[..., np.newaxis, np.newaxis]
+/content/drive/MyDrive/GAN_project/pipeline/physical_metrics/calogan_metrics.py:67: RuntimeWarning: divide by zero encountered in divide
+  line_func = lambda x: -(x - points_0[..., np.newaxis, np.newaxis]) / (ps[:, 0] / ps[:, 1])[..., np.newaxis, np.newaxis] + points_1[..., np.newaxis, np.newaxis]
+/content/drive/MyDrive/GAN_project/pipeline/physical_metrics/calogan_metrics.py:22: RuntimeWarning: divide by zero encountered in divide
+  line_func = lambda x: -(x - points_0[..., np.newaxis, np.newaxis]) / (ps[:, 1] / ps[:, 0])[..., np.newaxis, np.newaxis] + points_1[..., np.newaxis, np.newaxis]
+/content/drive/MyDrive/GAN_project/pipeline/physical_metrics/calogan_metrics.py:20: RuntimeWarning: divide by zero encountered in divide
+  line_func = lambda x: (x - points_0[..., np.newaxis, np.newaxis]) / (ps[:, 0] / ps[:, 1])[..., np.newaxis, np.newaxis] + points_1[..., np.newaxis, np.newaxis]
+/content/drive/MyDrive/GAN_project/pipeline/physical_metrics/calogan_metrics.py:69: RuntimeWarning: divide by zero encountered in divide
+  line_func = lambda x: (x - points_0[..., np.newaxis, np.newaxis]) / (ps[:, 1] / ps[:, 0])[..., np.newaxis, np.newaxis] + points_1[..., np.newaxis, np.newaxis]
+/content/drive/MyDrive/GAN_project/pipeline/physical_metrics/calogan_metrics.py:67: RuntimeWarning: divide by zero encountered in divide
+  line_func = lambda x: -(x - points_0[..., np.newaxis, np.newaxis]) / (ps[:, 0] / ps[:, 1])[..., np.newaxis, np.newaxis] + points_1[..., np.newaxis, np.newaxis]
+9it [00:54,  6.01s/it]
+epochs done: 11
+/content/drive/MyDrive/GAN_project/visualization_aux/common.py:127: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  plt.tight_layout()
+ 50%|████▉     | 50/101 [00:03<00:03, 13.81it/s]
+
+=== ENERGY DEBUG ===
+batch_index: 0
+real energy min/mean/max: 0.009089521132409573 2.0782384872436523 6.31636381149292
+fake energy min/mean/max: 0.0 2.2365736961364746 6.124937057495117
+real abs mean: 0.008482606150209904
+fake abs mean: 0.009128871373832226
+real nonzero ratio: 0.018408162519335747
+fake nonzero ratio: 0.02338775433599949
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.0003232349408790469
+energy_loss: 1.4720486402511597
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.001472048694267869
+sparsity_loss: 0.009128871373832226
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 9.128871170105413e-05
+gen_loss total: 0.0018865723395720124
+
+=== ENERGY DEBUG ===
+batch_index: 50
+real energy min/mean/max: 0.07876590639352798 2.3265156745910645 6.699066638946533
+fake energy min/mean/max: 0.15239199995994568 2.670624017715454 6.473120212554932
+real abs mean: 0.009495982900261879
+fake abs mean: 0.010900505818426609
+real nonzero ratio: 0.018857141956686974
+fake nonzero ratio: 0.025959182530641556
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.0006613871082663536
+energy_loss: 2.255864143371582
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.0022558642085641623
+sparsity_loss: 0.010900505818426609
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 0.00010900505731115118
+gen_loss total: 0.003026256337761879
+
+=== ENERGY DEBUG ===
+batch_index: 100
+real energy min/mean/max: 0.3912336230278015 2.391791820526123 5.843039512634277
+fake energy min/mean/max: 0.6570995450019836 2.538064479827881 6.155747413635254
+real abs mean: 0.009762415662407875
+fake abs mean: 0.01035944651812315
+real nonzero ratio: 0.01788715459406376
+fake nonzero ratio: 0.02545017935335636
+
+=== ENERGY LOSS DEBUG ===
+adv_gen_loss: 0.0012808563187718391
+energy_loss: 1.8895342350006104
+lambda_energy: 0.001
+lambda_energy * energy_loss: 0.0018895342946052551
+sparsity_loss: 0.01035944651812315
+lambda_sparsity: 0.01
+lambda_sparsity * sparsity_loss: 0.00010359446605434641
+gen_loss total: 0.0032739851158112288
+  Средний loss критика: -0.0003
+  Средний loss генератора: 0.0021
+  Средний adv loss генератора: 0.0004
+  Средний energy loss генератора: 1.6266
+  Средний weighted energy loss генератора: 0.0016
+  Grad norm критика: 0.0146
+  Grad norm генератора: 0.0304
+  D(real) среднее: -0.1161
+  D(fake) среднее: -0.1173
+  loss: 0.0003
+/content/drive/MyDrive/GAN_project/pipeline/physical_metrics/calogan_metrics.py:22: RuntimeWarning: divide by zero encountered in divide
+  line_func = lambda x: -(x - points_0[..., np.newaxis, np.newaxis]) / (ps[:, 1] / ps[:, 0])[..., np.newaxis, np.newaxis] + points_1[..., np.newaxis, np.newaxis]
+/content/drive/MyDrive/GAN_project/pipeline/physical_metrics/calogan_metrics.py:20: RuntimeWarning: divide by zero encountered in divide
+  line_func = lambda x: (x - points_0[..., np.newaxis, np.newaxis]) / (ps[:, 0] / ps[:, 1])[..., np.newaxis, np.newaxis] + points_1[..., np.newaxis, np.newaxis]
+/content/drive/MyDrive/GAN_project/pipeline/physical_metrics/calogan_metrics.py:69: RuntimeWarning: divide by zero encountered in divide
+  line_func = lambda x: (x - points_0[..., np.newaxis, np.newaxis]) / (ps[:, 1] / ps[:, 0])[..., np.newaxis, np.newaxis] + points_1[..., np.newaxis, np.newaxis]
+/content/drive/MyDrive/GAN_project/pipeline/physical_metrics/calogan_metrics.py:67: RuntimeWarning: divide by zero encountered in divide
+  line_func = lambda x: -(x - points_0[..., np.newaxis, np.newaxis]) / (ps[:, 0] / ps[:, 1])[..., np.newaxis, np.newaxis] + points_1[..., np.newaxis, np.newaxis]
+3it [00:23,  7.80s/it]

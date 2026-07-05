@@ -1,0 +1,39 @@
+100%|██████████| 206/206 [00:20<00:00,  9.84it/s]
+  Средний loss критика: -0.0001
+  Средний loss генератора: 0.0001
+  Grad norm критика: 0.0185
+  Grad norm генератора: 0.0017
+  D(real) среднее: -0.0378
+  D(fake) среднее: -0.0377
+  loss: 0.0001
+epochs done: 50
+/content/drive/MyDrive/GAN_project/visualization_aux/common.py:113: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  plt.tight_layout()
+100%|██████████| 206/206 [00:18<00:00, 11.05it/s]
+  Средний loss критика: -0.0001
+  Средний loss генератора: 0.0001
+  Grad norm критика: 0.0187
+  Grad norm генератора: 0.0016
+  D(real) среднее: -0.0356
+  D(fake) среднее: -0.0357
+  loss: 0.0001
+epochs done: 51
+100%|██████████| 206/206 [00:18<00:00, 11.24it/s]
+  Средний loss критика: -0.0001
+  Средний loss генератора: 0.0001
+  Grad norm критика: 0.0180
+  Grad norm генератора: 0.0015
+  D(real) среднее: -0.0369
+  D(fake) среднее: -0.0370
+  loss: 0.0001
+epochs done: 52
+100%|██████████| 206/206 [00:19<00:00, 10.72it/s]
+  Средний loss критика: -0.0001
+  Средний loss генератора: 0.0001
+  Grad norm критика: 0.0178
+  Grad norm генератора: 0.0015
+  D(real) среднее: -0.0344
+  D(fake) среднее: -0.0343
+  loss: 0.0001
+epochs done: 53
+ 59%|█████▉    | 122/206 [00:10<00:07, 11.41it/s]
