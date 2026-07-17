@@ -7,7 +7,7 @@ import torch.utils.data
 from torch import optim
 from tqdm import tqdm
 
-from pipeline.aux import calc_grad_norm
+from pipeline._aux import calc_grad_norm
 from pipeline.data import collate_fn, move_batch_to, get_random_infinite_dataloader
 from pipeline.device import get_local_device
 from pipeline.gan import GAN
@@ -125,6 +125,9 @@ class WganEpochTrainer(GanEpochTrainer):
         self.gen_batch_cnt = 0
         self.disc_batch_cnt = 0
         self.loss_arr = []
+
+    def get_loss_arr(self):
+        return self.loss_arr
 
     def train_epoch(self, gan_model: GAN,
                     train_dataset: torch.utils.data.Dataset, val_dataset: torch.utils.data.Dataset,

@@ -4,7 +4,7 @@ Local config which is the same for all experiments running in the environment
 import contextlib
 from typing import Optional
 import os
-os.chdir('/content/drive/MyDrive/GAN_project')
+# os.chdir('/content/drive/MyDrive/GAN_project')
 from pipeline import logger
 from pipeline.config import load_global_config
 from pipeline.logger import LoggerConfig

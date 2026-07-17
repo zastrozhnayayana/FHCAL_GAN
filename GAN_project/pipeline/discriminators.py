@@ -5,7 +5,7 @@ import torch
 import torch.nn.functional as F
 from torch import nn
 
-from pipeline import aux
+from pipeline import _aux
 
 
 class Discriminator(nn.Module):
@@ -66,7 +66,7 @@ class MNISTDiscriminator(Discriminator):
         x_vec = self.x_to_vector(x)
         if y is not None:
             assert isinstance(y, torch.Tensor)
-            y = aux.ohe_labels(y, self.condition_classes_cnt)
+            y = _aux.ohe_labels(y, self.condition_classes_cnt)
             y_vec = self.y_transform(y)
             x_vec = torch.concat((x_vec, y_vec), dim=1)
 
@@ -222,7 +222,7 @@ class CaloganPhysicsDiscriminator(Discriminator):
     def forward(self, EnergyDeposit, y):
         point, momentum = y
         if self.add_points_norms_and_angles:
-            point = aux.add_angle_and_norm(point)
+            point = _aux.add_angle_and_norm(point)
         
         X = self.activation(self.conv1(EnergyDeposit))
        
@@ -275,7 +275,7 @@ class SmallCaloganPhysicsDiscriminator(Discriminator):
     def forward(self, EnergyDeposit, y):
         point, momentum = y
         if self.add_points_norms_and_angles:
-            point = aux.add_angle_and_norm(point)
+            point = _aux.add_angle_and_norm(point)
 
         # print(EnergyDeposit.shape)
         X = self.activation(self.conv1(EnergyDeposit))

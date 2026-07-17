@@ -6,7 +6,7 @@ import torch
 import torch.nn.functional as F
 from torch import nn
 
-from pipeline import aux
+from pipeline import _aux
 
 
 class Generator(nn.Module):
@@ -82,7 +82,7 @@ class MNISTGenerator(Generator):
         if y is not None:
             assert isinstance(y, torch.Tensor)
             # apply one-hot-encoding
-            y_vec = aux.ohe_labels(y, self.condition_classes_cnt)
+            y_vec = _aux.ohe_labels(y, self.condition_classes_cnt)
             y_trans = self.y_transform(y_vec)
             z = torch.concat((z, y_trans), dim=1)
         x = self.model(z)
@@ -213,7 +213,7 @@ class CaloganPhysicsGenerator(Generator):
         point, momentum = y
 
         if self.add_points_norms_and_angles:
-            point = aux.add_angle_and_norm(point)
+            point = _aux.add_angle_and_norm(point)
 
         condition = torch.cat([momentum, point], dim=1)
         return condition
