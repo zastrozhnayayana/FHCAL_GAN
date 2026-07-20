@@ -21,8 +21,8 @@ from pipeline.results_storage import ExperimentInfo, Result
 from pipeline.storage import ModelDir
 
 
+# Обёртка над всем необходимым для шага градиентного спуска (оптимизатор + расписание lr)
 class Stepper:
-    """обёртка над всем необходимым для шага градиентного спуска"""
     def __init__(self, optimizer: optim.Optimizer,
                  scheduler=None, scheduler_mode: str = 'epoch') -> None:
         self.optimizer = optimizer

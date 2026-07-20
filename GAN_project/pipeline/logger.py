@@ -9,15 +9,17 @@ Currently there's no convenient support for several loggers at one time.
 It is expected to be provided if the existing logging interface shows its convenience.
 """
 
-
+# Класс позволяет задавать, какие метрики и периоды логгировать, а какие игнорировать
 @dataclass
 class LoggerConfig:
-    ignored_periods: Optional[Set[str]] = None
-    ignored_metrics: Optional[Set[str]] = None
-    periodic_periods: Optional[Dict[str, int]] = None
+    ignored_periods: Optional[Set[str]] = None # {period_name}
+    ignored_metrics: Optional[Set[str]] = None # {metric_name}
+    periodic_periods: Optional[Dict[str, int]] = None # {period_name: period_step}
     # TODO: добавить возможность отключить логирование training_stats
 
 
+# Метрики логируются по периодам (epoch/gen_batch/disc_batch), по умолчанию отключили gen_batch и disc_batch
+# Внутри каждого периода есть несколько шагов с индексами period_index 
 def get_default_config() -> LoggerConfig:
     return LoggerConfig(
         ignored_periods={'gen_batch', 'disc_batch'}
@@ -28,9 +30,12 @@ class GANLogger:
     """An abstract class for GAN loggers"""
     def __init__(self, config: Optional[LoggerConfig] = None) -> None:
         self.config = get_default_config() if config is None else config
-        self.accumulated_data: Dict[str, Tuple[int, Dict[str, Any]]] = {}   # (period: data with {period: period_index})
-        self.training_metrics = defaultdict(dict)  # {period_name: {metric_name: {'min': (min_value, period_index), 'max': (max_value, period_index), 'last': value}}}
-
+        # Данные на одном шаге аккумулируются в self.accumulated_data до вызова commit
+        self.accumulated_data: Dict[str, Tuple[int, Dict[str, Any]]] = {} # {period_name: (period_index, {metric_name: value})}
+        # Статистики (min, max, last) по метрикам за период
+        self.training_metrics = defaultdict(dict) # {period_name: {metric_name: {'min': (min_value, period_index), 'max': (max_value, period_index), 'last': last_value}}}
+    
+    # Обновляет статистику по метрикам (self.training_metrics) за период (например, за эпоху)
     def _update_training_info(self, data: Dict[str, Any], period: str, period_index: int) -> None:
         cur_period_minmax = self.training_metrics[period]
         for metric_name, value in data.items():
@@ -51,9 +56,12 @@ class GANLogger:
         """
         return dict(self.training_metrics)
 
+    # Выгружаем статистики в нашем удобном виде в comet
     def log_summary_metrics(self, data: Dict[str, Any]) -> None:
+        # data = {название статистики (min/max/last) + название метрики (всякие лоссы): значение статистики (номер эпохи)}
         pass
-
+    
+    # Преобразуем статистики из self.training_metrics в словарь {название статистики (min/max/last) + название метрики (всякие лоссы): значение статистики (номер эпохи)}
     def log_running_training_metrics(self, period: str) -> None:
         training_metrics = self.training_metrics[period]
         logged_data = {}
@@ -71,6 +79,7 @@ class GANLogger:
                     saved_value = value
                 logged_data[full_metric_name] = saved_value
 
+        # logged_data = {название статистики (min/max/last) + название метрики (всякие лоссы): значение статистики (номер эпохи)}
         self.log_summary_metrics(logged_data)
 
     def log_metrics(self, data: Dict[str, Any], period: str, period_index: Optional[int] = None, commit: bool = True) -> None:
@@ -83,26 +92,29 @@ class GANLogger:
         :param commit: if False, data will be accumulated but not logged
         use commit=True only for the last call for the pair (period, period_index)
         """
+        # Если период находится в списке игнорируемых, то не логгируем
         if self.config.ignored_periods and period in self.config.ignored_periods:
             return
 
+        # Если период находится в списке периодических, то логгируем только каждый n-й период
         if self.config.periodic_periods and period in self.config.periodic_periods and \
            (period_index % self.config.periodic_periods[period]) != 0:
             return
 
+        # Удаляем игнорируемые метрики из данных, если они есть
         if self.config.ignored_metrics is not None:
-            data = copy(data)
+            data = copy(data) # чтобы не изменять оригинальный словарь
             for metric in copy(data):
                 if metric in self.config.ignored_metrics:
                     data.pop(metric)
-
         data = copy(data)
         if period in self.accumulated_data:
             prev_period_index, prev_data = self.accumulated_data[period]
+            # Для каждого (period, period_index) должно быть отдельное логирование
             if period_index is not None and prev_period_index != period_index:
                 raise RuntimeError(f'Trying to log data for the {period} #{period_index} while the data for the {period} #{prev_period_index} was not logged')
-            period_index = prev_period_index
-            data.update(prev_data)
+            period_index = prev_period_index # Если не задан period_index, то используем предыдущий
+            data.update(prev_data) # Объединяем данные, если были предыдущие вызовы для этого периода
 
         assert period_index is not None, 'Period index is not specified'
 
@@ -120,6 +132,7 @@ class GANLogger:
             self.log_metrics(data={}, period=period, commit=True)
 
     @abstractmethod
+    # Выгрузка в comet
     def _log_metrics(self, data: Dict[str, Any], period: str, period_index: int) -> None:
         pass
 

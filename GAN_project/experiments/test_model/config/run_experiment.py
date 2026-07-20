@@ -25,7 +25,7 @@ from pipeline.regularizer import *
 from pipeline.results_storage import ResultsStorage
 from pipeline.storage import ExperimentsStorage
 from pipeline.train import Stepper, WganEpochTrainer, GanTrainer
-from pipeline.wandb_logger import WandbCM
+from pipeline.comet_logger import CometCM
 
 
 def form_metric() -> Metric:

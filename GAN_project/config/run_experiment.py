@@ -25,7 +25,7 @@ from pipeline.regularizer import *
 from pipeline.results_storage import ResultsStorage
 from pipeline.storage import ExperimentsStorage
 from pipeline.train import Stepper, WganEpochTrainer, GanTrainer
-from pipeline.wandb_logger import WandbCM
+from pipeline.comet_logger import CometCM
 
 
 def form_metric() -> Metric:
@@ -101,6 +101,7 @@ def form_gan_trainer(model_name: str, gan_model: Optional[GAN] = None, n_epochs:
     if gan_model is None:
         gan_model = GAN(generator, discriminator, uniform_noise_generator)
 
+    # В общем случае Stepper - это scheduler + optimizer, здесь у нас нет schesuler
     generator_stepper = Stepper(
         optimizer=torch.optim.RMSprop(generator.parameters(), lr=1e-4)
     )
@@ -123,7 +124,8 @@ def form_gan_trainer(model_name: str, gan_model: Optional[GAN] = None, n_epochs:
                                         logger_cm_fn=logger_cm_fn,
                                         regularizer=regularizer)
     return train_gan_generator, epoch_trainer
-
+    # train_gan_generator — объект, который запускает обучение по эпохам.
+    # epoch_trainer — объект, который непосредственно знает, как обучать WGAN в течение одной эпохи и хранит историю loss.
 
 def run() -> GAN:
     model_name = 'physics_test'

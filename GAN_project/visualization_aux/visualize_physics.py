@@ -196,4 +196,9 @@ def plot_fhcal_simple(energy_data, event_idx=None):
     plt.tight_layout()
     # plt.show()
     # return fig
-  
+
+def show_real_events_simple(dataset, indices):
+    for idx in indices:
+        single_event = dataset[idx][0]
+        print(f"REAL event {idx}, total energy = {single_event.sum().item():.4f}")
+        plot_fhcal_simple(single_event, event_idx=idx)

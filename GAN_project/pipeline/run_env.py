@@ -39,9 +39,9 @@ def get_local_env() -> Environment:
 ENV = get_local_env()
 
 
-def get_wandb_token() -> str:
+def get_comet_token() -> str:
     if ENV is Environment.LOCAL:
-        return os.getenv('WANDB_TOKEN')
+        return os.getenv('COMET_API_KEY')
     elif ENV is Environment.KAGGLE:
         from kaggle_secrets import UserSecretsClient
-        return UserSecretsClient().get_secret('WANDB_TOKEN')
+        return UserSecretsClient().get_secret('COMET_API_KEY')

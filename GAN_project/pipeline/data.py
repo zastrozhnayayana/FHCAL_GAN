@@ -33,6 +33,7 @@ def get_random_infinite_dataloader(dataset: torch.utils.data.Dataset, batch_size
     return cycle(RandomDataloader(dataset, batch_size=batch_size, *args, **kwargs))
 
 
+
 def collate_fn(els_list: Sequence[Union[Tuple, int, torch.Tensor]]):
     if isinstance(els_list[0], tuple):
         return tuple(collate_fn(list(a)) for a in zip(*els_list))

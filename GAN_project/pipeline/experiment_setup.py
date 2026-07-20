@@ -9,7 +9,7 @@ from pipeline import logger
 from pipeline.config import load_global_config
 from pipeline.logger import LoggerConfig
 from pipeline.storage import ExperimentsStorage
-from pipeline.wandb_logger import WandbCM
+from pipeline.comet_logger import CometCM
 
 
 global_config = load_global_config()
@@ -36,8 +36,8 @@ def init_logger(model_name: str = '', config: Optional[LoggerConfig] = None):
     @contextlib.contextmanager
     def logger_cm():
         try:
-            with WandbCM(project_name=project_name, experiment_id=model_name, config=config) as wandb_logger:
-                yield wandb_logger
+            with CometCM(project_name=project_name, experiment_id=model_name, config=config) as comet_logger:
+                yield comet_logger
         finally:
             pass
     return logger_cm
