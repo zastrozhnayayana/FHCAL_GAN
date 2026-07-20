@@ -16,6 +16,7 @@ def energy_imshow(energy, ax=None, cmap='inferno', log_transform: bool = True, l
     else:
         data = np.array(energy)
     
+    # (у нас и так форма (7, 7, 5))
     # Приводим к формату (слои, y, x)
     if data.shape == (7, 5, 7):
         data = np.transpose(data, (2, 0, 1))
@@ -35,10 +36,10 @@ def energy_imshow(energy, ax=None, cmap='inferno', log_transform: bool = True, l
         plt.colorbar(im, ax=ax, label='Энергия')
         return im
     
-    # СЛУЧАЙ 2: Передан отдельный ax (используется в gen_several_images)
-    # Показываем сумму по слоям
+    # СЛУЧАЙ 2: Передан отдельный ax (используется в gen_several_images) ??? не используется вроде как
     if ax is not None:
         if hasattr(ax, '__len__') and not isinstance(ax, plt.Axes):
+            # Показываем все слои
             fig, axes = plt.subplots(2, 4, figsize=(14, 7))
             vmax = np.max(data)
             
@@ -54,6 +55,7 @@ def energy_imshow(energy, ax=None, cmap='inferno', log_transform: bool = True, l
             plt.show()
             return fig
         else:
+            # Показываем сумму по слоям
             data_2d = np.sum(data, axis=0)
             im = ax.imshow(data_2d, cmap=cmap, interpolation='none')
             ax.set_title('Сумма по слоям')
@@ -149,8 +151,8 @@ def get_test_data(global_config):
 
     
 
-   
-    
+# USED
+# рисует распределение энергии по слоям для одного события
 def plot_fhcal_simple(energy_data, event_idx=None):
     
     import numpy as np
@@ -196,9 +198,4 @@ def plot_fhcal_simple(energy_data, event_idx=None):
     plt.tight_layout()
     # plt.show()
     # return fig
-
-def show_real_events_simple(dataset, indices):
-    for idx in indices:
-        single_event = dataset[idx][0]
-        print(f"REAL event {idx}, total energy = {single_event.sum().item():.4f}")
-        plot_fhcal_simple(single_event, event_idx=idx)
+  

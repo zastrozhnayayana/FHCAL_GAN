@@ -31,10 +31,12 @@ class Normalizer(nn.Module):
     def forward(self, X: torch.Tensor, *args, **kwargs) -> torch.Tensor:
         return self.module(X, *args, **kwargs)
 
+    # если mode=True переключает в режим обучения, если mode=False - в режим оценки
     def train(self, mode: bool = True) -> 'Normalizer':
         self.module.train(mode)
         return self
 
+    # переключает в режим оценки 
     def eval(self) -> 'Normalizer':
         self.module.eval()
         return self

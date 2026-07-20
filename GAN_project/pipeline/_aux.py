@@ -11,8 +11,8 @@ def ohe_labels(y: torch.Tensor, classes_cnt: int) -> torch.Tensor:
 
 # for physics data
 def add_angle_and_norm(points: torch.Tensor) -> torch.Tensor:
-    angles = torch.atan2(points[:, 1], points[:, 0])[:, None]
-    norms = torch.linalg.norm(points, dim=1)[:, None]
+    angles = torch.atan2(points[:, 1], points[:, 0])[:, None] # добавляем угол в радианах (в диапазоне [-pi, pi])
+    norms = torch.linalg.norm(points, dim=1)[:, None] # добавляем норму вектора
     return torch.concat([points, angles, norms], dim=1)
 
 

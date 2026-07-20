@@ -26,7 +26,7 @@ class Generator(nn.Module):
 class CaloganPhysicsGenerator(Generator):
     def __init__(self, noise_dim: int, act_func=F.relu, add_points_norms_and_angles: bool = True):
         super().__init__()
-        self.noise_dim = noise_dim
+        self.noise_dim = noise_dim # размер вектора шума
         self.activation = act_func
         self.add_points_norms_and_angles = add_points_norms_and_angles
 
@@ -54,23 +54,22 @@ class CaloganPhysicsGenerator(Generator):
         return condition
 
     def forward(self, z: torch.Tensor, y) -> torch.Tensor:
-        condition = self._prepare_condition(y)
-
-        x = torch.cat([z, condition], dim=1)
+        condition = self._prepare_condition(y) # вектор условия (p_x, p_y, p_z, x, y, phi, r)
+        x = torch.cat([z, condition], dim=1) # (B, noise_dim + condition_dim)
 
         x = self.activation(self.bn1(self.fc1(x)))
 
-        x = torch.cat([x, condition], dim=1)
+        x = torch.cat([x, condition], dim=1) # (B, 256 + condition_dim)
         x = self.activation(self.bn2(self.fc2(x)))
 
-        x = torch.cat([x, condition], dim=1)
+        x = torch.cat([x, condition], dim=1) # (B, 512 + condition_dim)
         x = self.activation(self.bn3(self.fc3(x)))
 
-        x = torch.cat([x, condition], dim=1)
+        x = torch.cat([x, condition], dim=1) # (B, 1024 + condition_dim)
         x = self.fc4(x)
 
-        EnergyDeposit = x.view(-1, 7, 7, 5)
+        EnergyDeposit = x.view(-1, 7, 7, 5) # (B, 7, 7, 5)
 
-        EnergyDeposit = F.relu(EnergyDeposit)
+        EnergyDeposit = F.relu(EnergyDeposit) # восстанавливаем физический смысл: энергия не может быть отрицательной
 
         return EnergyDeposit

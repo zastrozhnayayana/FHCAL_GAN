@@ -8,7 +8,7 @@ import torchvision
 from torch import nn
 from torchvision import transforms
 
-
+# ВАЖНО
 """
 Датасеты могут быть двух типов:
 1. Элемент - число или тензор. В этом случае элемент рассматривается как x в GAN
@@ -31,7 +31,6 @@ class RandomDataloader(torch.utils.data.DataLoader):
 
 def get_random_infinite_dataloader(dataset: torch.utils.data.Dataset, batch_size: int, *args, **kwargs):
     return cycle(RandomDataloader(dataset, batch_size=batch_size, *args, **kwargs))
-
 
 
 def collate_fn(els_list: Sequence[Union[Tuple, int, torch.Tensor]]):
@@ -107,6 +106,8 @@ class ExtractIndicesDataset(torch.utils.data.Dataset):
             return tuple(obj[i] for i in self.indices)
 
 
+
+# USED
 class UnifiedDatasetWrapper(torch.utils.data.Dataset):
     """
     Обёртка для поддержки датасетов обоих типов
@@ -114,6 +115,7 @@ class UnifiedDatasetWrapper(torch.utils.data.Dataset):
     def __init__(self, dataset: torch.utils.data.Dataset):
         self.dataset = dataset
         self.inverse_transform = getattr(dataset, 'inverse_transform', None)
+        # У нас всегда есть inverse_transform, т.к. мы используем PhysicsDataset
 
     def __len__(self) -> int:
         return len(self.dataset)
@@ -124,6 +126,7 @@ class UnifiedDatasetWrapper(torch.utils.data.Dataset):
             assert len(element) == 2
             x, y = element
         else:
+            # если есть только распределение энергии (у нас всегда есть ещё и точка, и импульс)
             x, y = element, None
         return x, y
 
@@ -168,6 +171,7 @@ def get_mnist_dataset(root='./mnist', train: bool = True, keep_labels: bool = Tr
     return mnist_dataset
 
 
+# USED
 class PhysicsDataset(torch.utils.data.Dataset):
     """
     one element: (energy deposit, (point, momentum))
@@ -180,7 +184,7 @@ class PhysicsDataset(torch.utils.data.Dataset):
         inverse_transform(energy, point, momentum)
         """
         self.transform = transform
-        self.inverse_transform = inverse_transform  # for outer use
+        self.inverse_transform = inverse_transform  # чтобы можно было потом восстановить исходные значения энергии
 
         if transform is not None:
             energy = self.transform(energy)
@@ -190,27 +194,31 @@ class PhysicsDataset(torch.utils.data.Dataset):
         self.momentum = momentum
 
     def __getitem__(self, idx: int) -> tuple:
+        # элемент датасета - кортеж из 2-х элементов: energy и tuple из point и momentum
         return self.energy[idx], (self.point[idx], self.momentum[idx])
 
     def __len__(self) -> int:
         return self.energy.shape[0]
 
 
-# принимают batch-и x-ов
+# ln(1 + x)
 def log1p_transform(x: torch.Tensor):
     return torch.log1p(x)
 
-
+# exp(x) - 1 (обратная функция к log1p_transform)
 def log1p_inverse_transform(x: torch.Tensor):
     return torch.expm1(x)
 
 
+# USED
+# Берёт путь к файлу с данными и возвращеает train/val датасеты
 def get_physics_dataset(path: str, train: bool = True, val_ratio: float = 0.5,
                         log1p_energy: bool = True) -> torch.utils.data.Dataset:
     TRAIN_VAL_SPLIT_SEED = 0x3df3fa
 
     data_train = np.load(path)
     
+    # рандомно выбираем индексы для валидации и обучения
     np.random.seed(TRAIN_VAL_SPLIT_SEED)
     dataset_size = len(data_train['EnergyDeposit'])
     val_size = int(dataset_size * val_ratio)
@@ -222,12 +230,16 @@ def get_physics_dataset(path: str, train: bool = True, val_ratio: float = 0.5,
     train_indices = all_indices[~val_mask]
     indices = train_indices if train else val_indices
 
+    # переставляем оси тензора energy и берём только x, y координаты точки частицы
     energy = torch.tensor(data_train['EnergyDeposit'][indices]).float()
+    # размерность energy: (N, 7, 5, 7) - (примеры, y, x, слои)
     energy = torch.permute(energy, dims=(0, 3, 1, 2))
-    point = torch.tensor(data_train['ParticlePoint'][:, :2][indices]).float()
+    # размерность energy: (N, 7, 7, 5) - (примеры, слои, y, x)
+    point = torch.tensor(data_train['ParticlePoint'][:, :2][indices]).float() # z 
     momentum = torch.tensor(data_train['ParticleMomentum'][indices]).float()
 
     transform, inverse_transform = None, None
+    # логарифмируем энергию, чтобы распределение было более равномерным, и модель училась стабильнее
     if log1p_energy:
         transform = log1p_transform
         inverse_transform = log1p_inverse_transform

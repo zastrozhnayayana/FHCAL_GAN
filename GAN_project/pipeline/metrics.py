@@ -32,9 +32,11 @@ Each metric has 2 main methods:
 class Metric:
     NAME = None
 
+    # вычисляет метрику по переданным аргументам
     def evaluate(self, *args, **kwargs):
         pass
 
+    # берёт все возможные аргументы и возвращает только те, которые нужны для метрики
     def prepare_args(self, **kwargs):
         return kwargs
 
@@ -42,9 +44,10 @@ class Metric:
                  dataloader: Optional[torch.utils.data.DataLoader] = None,
                  train_dataset: Optional[torch.utils.data.Dataset] = None,
                  val_dataset: Optional[torch.utils.data.Dataset] = None,
-                 gen_data: Optional[Any] = None,
-                 val_data: Optional[Any] = None,
-                 inverse_to_initial_domain_fn: Optional[Any] = None):
+                 gen_data: Optional[Any] = None, # примеры, сгенерированные GAN-ом
+                 val_data: Optional[Any] = None, # примеры из валидационного датасета (для сравнения с генерированными)
+                 inverse_to_initial_domain_fn: Optional[Any] = None): # функция для обратного преобразования данных в исходное пространство
+                # initial_domain - исходное пространство данных
         kwargs = {
             'gan_model': gan_model,
             'dataloader': dataloader,
@@ -61,13 +64,13 @@ class Metric:
 # метрика, которая анализирует GAN, и не анализирует данные
 class ModelMetric(Metric):
     def prepare_args(self, **kwargs):
-        kwargs = super().prepare_args(**kwargs)
+        kwargs = super().prepare_args(**kwargs) # было бы полезно, если у меня было что-то написано в prepare_args в надклассе
 
         return {
             'gan_model': kwargs['gan_model']
         }
 
-
+# Классы для метрик, которые следят за аттрибутами генератора и дискриминатора
 class GeneratorAttributeMetric(ModelMetric):
     def __init__(self, attr_name: str):
         self.attr_name = attr_name
@@ -87,7 +90,7 @@ class DiscriminatorAttributeMetric(ModelMetric):
         discriminator = gan_model.discriminator
         return getattr(discriminator, self.attr_name)
 
-
+# Классы для метрик, которые следят за параметрами генератора и дискриминатора
 class GeneratorParameterMetric(ModelMetric):
     def __init__(self, attr_name: str):
         self.attr_name = attr_name
