@@ -2,7 +2,7 @@ from abc import abstractmethod
 from collections import defaultdict
 from copy import copy
 from dataclasses import dataclass
-from typing import Dict, Any, Iterable, Set, Optional, Tuple, Union
+from typing import Dict, Any, Iterable, Set, Optional, Tuple
 
 """
 Currently there's no convenient support for several loggers at one time.
@@ -49,12 +49,6 @@ class GANLogger:
                 if value > cur_period_minmax[metric_name]['max'][0]:
                     cur_period_minmax[metric_name]['max'] = (value, period_index)
             cur_period_minmax[metric_name]['last'] = value
-
-    def get_training_metrics(self) -> Dict[str, Dict[str, Union[float, int]]]:
-        """
-        {period_name: {metric_name: {'min': (min_value, period_index), 'max': (max_value, period_index)}}}
-        """
-        return dict(self.training_metrics)
 
     # Выгружаем статистики в нашем удобном виде в comet
     def log_summary_metrics(self, data: Dict[str, Any]) -> None:

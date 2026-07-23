@@ -25,22 +25,19 @@
 
 Given a sample from the true and the fake distribution embedded in some feature
 space (say, Inception), it computes the precision and recall via the algorithm
-presented in [arxiv.org/abs/1806.00035]. Finally, one can plot the resulting
-curves for different models.
+presented in [arxiv.org/abs/1806.00035].
 
 Typical usage example:
 
 import prd
   prd_data_1 = prd.compute_prd_from_embedding(eval_feats_1, ref_feats_1)
   prd_data_2 = prd.compute_prd_from_embedding(eval_feats_2, ref_feats_2)
-  prd.plot([prd_data_1, prd_data_2], ['GAN_1', 'GAN_2'])
 """
 
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-from matplotlib import pyplot as plt
 import numpy as np
 import sklearn.cluster
 try:
@@ -206,125 +203,3 @@ def compute_prd_from_embedding(eval_data, ref_data, num_clusters=20,
   precision = np.mean(precisions, axis=0)
   recall = np.mean(recalls, axis=0)
   return precision, recall
-
-
-def _prd_to_f_beta(precision, recall, beta=1, epsilon=1e-10):
-  """Computes F_beta scores for the given precision/recall values.
-
-  The F_beta scores for all precision/recall pairs will be computed and
-  returned.
-
-  For precision p and recall r, the F_beta score is defined as:
-  F_beta = (1 + beta^2) * (p * r) / ((beta^2 * p) + r)
-
-  Args:
-    precision: 1D NumPy array of precision values in [0, 1].
-    recall: 1D NumPy array of precision values in [0, 1].
-    beta: Beta parameter. Must be positive. The default value is 1.
-    epsilon: Small constant to avoid numerical instability caused by division
-             by 0 when precision and recall are close to zero.
-
-  Returns:
-    NumPy array of same shape as precision and recall with the F_beta scores for
-    each pair of precision/recall.
-
-  Raises:
-    ValueError: If any value in precision or recall is outside of [0, 1].
-    ValueError: If beta is not positive.
-  """
-
-  if not ((precision >= 0).all() and (precision <= 1).all()):
-    raise ValueError('All values in precision must be in [0, 1].')
-  if not ((recall >= 0).all() and (recall <= 1).all()):
-    raise ValueError('All values in recall must be in [0, 1].')
-  if beta <= 0:
-    raise ValueError('Given parameter beta %s must be positive.' % str(beta))
-
-  return (1 + beta**2) * (precision * recall) / (
-      (beta**2 * precision) + recall + epsilon)
-
-
-def prd_to_max_f_beta_pair(precision, recall, beta=8):
-  """Computes max. F_beta and max. F_{1/beta} for precision/recall pairs.
-
-  Computes the maximum F_beta and maximum F_{1/beta} score over all pairs of
-  precision/recall values. This is useful to compress a PRD plot into a single
-  pair of values which correlate with precision and recall.
-
-  For precision p and recall r, the F_beta score is defined as:
-  F_beta = (1 + beta^2) * (p * r) / ((beta^2 * p) + r)
-
-  Args:
-    precision: 1D NumPy array or list of precision values in [0, 1].
-    recall: 1D NumPy array or list of precision values in [0, 1].
-    beta: Beta parameter. Must be positive. The default value is 8.
-
-  Returns:
-    f_beta: Maximum F_beta score.
-    f_beta_inv: Maximum F_{1/beta} score.
-
-  Raises:
-    ValueError: If beta is not positive.
-  """
-
-  if not ((precision >= 0).all() and (precision <= 1).all()):
-    raise ValueError('All values in precision must be in [0, 1].')
-  if not ((recall >= 0).all() and (recall <= 1).all()):
-    raise ValueError('All values in recall must be in [0, 1].')
-  if beta <= 0:
-    raise ValueError('Given parameter beta %s must be positive.' % str(beta))
-
-  f_beta = np.max(_prd_to_f_beta(precision, recall, beta))
-  f_beta_inv = np.max(_prd_to_f_beta(precision, recall, 1/beta))
-  return f_beta, f_beta_inv
-
-
-def plot(precision_recall_pairs, labels=None, out_path=None,
-         legend_loc='lower left', dpi=300):
-  """Plots precision recall curves for distributions.
-
-  Creates the PRD plot for the given data and stores the plot in a given path.
-
-  Args:
-    precision_recall_pairs: List of prd_data to plot. Each item in this list is
-                            a 2D array of precision and recall values for the
-                            same number of ratios.
-    labels: Optional list of labels of same length as list_of_prd_data. The
-            default value is None.
-    out_path: Output path for the resulting plot. If None, the plot will be
-              opened via plt.show(). The default value is None.
-    legend_loc: Location of the legend. The default value is 'lower left'.
-    dpi: Dots per inch (DPI) for the figure. The default value is 150.
-
-  Raises:
-    ValueError: If labels is a list of different length than list_of_prd_data.
-  """
-
-  if labels is not None and len(labels) != len(precision_recall_pairs):
-    raise ValueError(
-        'Length of labels %d must be identical to length of '
-        'precision_recall_pairs %d.'
-        % (len(labels), len(precision_recall_pairs)))
-
-  fig = plt.figure(figsize=(3.5, 3.5), dpi=dpi)
-  plot_handle = fig.add_subplot(111)
-  plot_handle.tick_params(axis='both', which='major', labelsize=12)
-
-  for i in range(len(precision_recall_pairs)):
-    precision, recall = precision_recall_pairs[i]
-    label = labels[i] if labels is not None else None
-    plt.plot(recall, precision, label=label, alpha=0.5, linewidth=3)
-
-  if labels is not None:
-    plt.legend(loc=legend_loc)
-
-  plt.xlim([0, 1])
-  plt.ylim([0, 1])
-  plt.xlabel('Recall', fontsize=12)
-  plt.ylabel('Precision', fontsize=12)
-  plt.tight_layout()
-  if out_path is None:
-    plt.show()
-  else:
-    plt.savefig(out_path, bbox_inches='tight', dpi=dpi)
-    plt.close()

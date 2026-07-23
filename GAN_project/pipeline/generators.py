@@ -24,13 +24,12 @@ class Generator(nn.Module):
 
 
 class CaloganPhysicsGenerator(Generator):
-    def __init__(self, noise_dim: int, act_func=F.relu, add_points_norms_and_angles: bool = True):
+    def __init__(self, noise_dim: int, act_func=F.relu):
         super().__init__()
         self.noise_dim = noise_dim # размер вектора шума
         self.activation = act_func
-        self.add_points_norms_and_angles = add_points_norms_and_angles
 
-        condition_dim = 7 if add_points_norms_and_angles else 5
+        condition_dim = 7
         input_dim = self.noise_dim + condition_dim
 
         self.fc1 = nn.Linear(input_dim, 256)
@@ -46,9 +45,7 @@ class CaloganPhysicsGenerator(Generator):
 
     def _prepare_condition(self, y):
         point, momentum = y
-
-        if self.add_points_norms_and_angles:
-            point = _aux.add_angle_and_norm(point)
+        point = _aux.add_angle_and_norm(point)
 
         condition = torch.cat([momentum, point], dim=1)
         return condition

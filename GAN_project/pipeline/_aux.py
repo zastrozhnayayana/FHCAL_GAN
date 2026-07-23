@@ -1,12 +1,4 @@
-import numpy as np
 import torch
-
-
-def ohe_labels(y: torch.Tensor, classes_cnt: int) -> torch.Tensor:
-    batch_size = y.shape[0]
-    m = torch.zeros(batch_size, classes_cnt).to(y.device)
-    m[np.arange(batch_size), y.long()] = 1
-    return m
 
 
 # for physics data
@@ -15,7 +7,7 @@ def add_angle_and_norm(points: torch.Tensor) -> torch.Tensor:
     norms = torch.linalg.norm(points, dim=1)[:, None] # добавляем норму вектора
     return torch.concat([points, angles, norms], dim=1)
 
-
+# L2-норма
 def calc_grad_norm(model) -> float:
     total_norm = 0.
     for p in model.parameters():

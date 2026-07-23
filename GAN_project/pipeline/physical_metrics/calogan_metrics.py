@@ -171,30 +171,3 @@ def get_shower_width(data, ps, points, orthog=False):
     sigma = np.sqrt(np.maximum(sum_2 - sum_1 * sum_1, 0))
 
     return np.nan_to_num(sigma)
-
-
-def get_ms_ratio2(data, alpha=0.1):
-    # (batch, 7, 7, 5) -> (batch, 7, 5)
-    data = _sum_layers_if_needed(data)
-
-    ms = np.sum(data, axis=(1, 2))
-    num = np.sum(
-        data >= (ms * alpha)[:, np.newaxis, np.newaxis],
-        axis=(1, 2)
-    )
-
-    # Новый размер центральной матрицы: 7 x 5 = 35
-    return num / (data.shape[1] * data.shape[2])
-
-
-def get_sparsity_level(data):
-    # (batch, 7, 7, 5) -> (batch, 7, 5)
-    data = _sum_layers_if_needed(data)
-
-    alphas = np.logspace(-5, -1, 20)
-    sparsity = []
-
-    for alpha in alphas:
-        sparsity.append(get_ms_ratio2(data, alpha))
-
-    return np.array(sparsity)

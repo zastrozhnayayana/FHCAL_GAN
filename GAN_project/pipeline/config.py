@@ -18,7 +18,7 @@ paths.yaml
 logger.yaml
 """
 
-
+# читаем информацию из файла .yaml, преобразуем в словарь и возвращаем его
 def _load_yaml(filename: str) -> Dict:
     filepath = os.path.join(CONFIGS_DIR, filename)
     with open(filepath, 'r') as file:

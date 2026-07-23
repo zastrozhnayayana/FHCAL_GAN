@@ -1,5 +1,5 @@
 import contextlib
-from typing import Tuple, Generator, Dict, Any, Optional, ContextManager, Callable, List
+from typing import Tuple, Generator, Dict, Any, Optional, ContextManager, Callable
 from abc import ABC, abstractmethod
 
 import torch
@@ -12,53 +12,36 @@ from pipeline.data import collate_fn, move_batch_to, get_random_infinite_dataloa
 from pipeline.device import get_local_device
 from pipeline.gan import GAN
 from pipeline.logger import GANLogger
-from pipeline.metrics import Metric, MetricsSequence
+from pipeline.metrics import Metric
 from pipeline.metrics_logging import log_metric
 from pipeline.normalization import update_normalizers_stats
 from pipeline.predicates import TrainPredicate
-from pipeline.regularizer import Regularizer
-from pipeline.results_storage import ExperimentInfo, Result
 from pipeline.storage import ModelDir
 
 
 # Обёртка над всем необходимым для шага градиентного спуска (оптимизатор + расписание lr)
 class Stepper:
-    def __init__(self, optimizer: optim.Optimizer,
-                 scheduler=None, scheduler_mode: str = 'epoch') -> None:
+    def __init__(self, optimizer: optim.Optimizer) -> None:
         self.optimizer = optimizer
-        self.scheduler = scheduler
-        self.scheduler_mode = scheduler_mode
 
-    def step(self, *args, **kwargs) -> None:
+    def step(self) -> None:
         self.optimizer.step()
-        if self.scheduler is not None and self.scheduler_mode == 'batch':
-            self.scheduler.step(*args, **kwargs)
-
-    def epoch_finished(self, *args, **kwargs) -> None:
-        if self.scheduler is not None and self.scheduler_mode == 'epoch':
-            self.scheduler.step(*args, **kwargs)
 
     def state_dict(self) -> Dict[str, Any]:
-        state_dict = {
+        return {
             'optimizer': self.optimizer.state_dict(),
         }
-        if self.scheduler is not None:
-            state_dict['scheduler'] = self.scheduler.state_dict()
-        return state_dict
 
     def load_state_dict(self, state_dict: Dict[str, Any]) -> None:
         self.optimizer.load_state_dict(state_dict['optimizer'])
-        if self.scheduler is not None:
-            self.scheduler.load_state_dict(state_dict['scheduler'])
 
 
 class GanEpochTrainer(ABC):
     @abstractmethod
     def train_epoch(self, gan_model: GAN,
-                    train_dataset: torch.utils.data.Dataset, val_dataset: torch.utils.data.Dataset,
+                    train_dataset: torch.utils.data.Dataset,
                     generator_stepper: Stepper, critic_stepper: Stepper,
-                    logger: Optional[GANLogger] = None,
-                    regularizer: Optional[Regularizer] = None) -> None:
+                    logger: Optional[GANLogger] = None) -> None:
         pass
 
 
@@ -74,32 +57,35 @@ def check_tensor(x: torch.Tensor, prefix: str = ''):
         return
     raise ValueError(msg)
 
+# распределение энергии по слоям должно быть правдоподобным
 def layer_fraction_loss(real_x, fake_x, eps=1e-8):
     real_layer = real_x.sum(dim=(2, 3))  # (batch, 7)
     fake_layer = fake_x.sum(dim=(2, 3))
 
-    real_total = real_layer.sum(dim=1, keepdim=True)
+    real_total = real_layer.sum(dim=1, keepdim=True) # (batch, )
     fake_total = fake_layer.sum(dim=1, keepdim=True)
 
-    real_frac = real_layer.detach() / (real_total.detach() + eps)
+    real_frac = real_layer.detach() / (real_total.detach() + eps) # (batch, 7) - доля каждого слоя в суммарной энергии (в каждой строке значения суммируются в 1)
     fake_frac = fake_layer / (fake_total + eps)
+    # хотим, чтобы fake_frac был ближе к real_frac, поэтому хотим, чтобы градиенты текли через fake_layer и fake_total
+    # а real_frac не хотим менять
 
-    return torch.mean((fake_frac - real_frac) ** 2)
+    return torch.mean((fake_frac - real_frac) ** 2) # MSE
 
-
+# квантили по суммарной энергии должны быть правдоподобными (хотим, чтобы распределение суммарной энергии было правдоподобным)
 def quantile_energy_loss(real_x: torch.Tensor, fake_x: torch.Tensor) -> torch.Tensor:
     """
     Дополнительный loss для генератора: подгоняет квантили распределения полной энергии.
     Градиент идет только через fake_x, real_x используется как target.
     real_x/fake_x ожидаются в формате (batch, layers, rows, cols), например (B, 7, 7, 5).
     """
-    real_e = real_x.sum(dim=tuple(range(1, real_x.ndim))).detach()
-    fake_e = fake_x.sum(dim=tuple(range(1, fake_x.ndim)))
+    real_e = real_x.sum(dim=tuple(range(1, real_x.ndim))).detach() # (B, )
+    fake_e = fake_x.sum(dim=tuple(range(1, fake_x.ndim))) # (B, )
 
     qs = torch.tensor([0.01, 0.05, 0.1, 0.5, 0.9, 0.95, 0.99], device=fake_x.device)
 
-    real_q = torch.quantile(real_e, qs)
-    fake_q = torch.quantile(fake_e, qs)
+    real_q = torch.quantile(real_e, qs) # (7, B)
+    fake_q = torch.quantile(fake_e, qs) # (7, B)
 
     return torch.mean((fake_q - real_q) ** 2)
 
@@ -130,16 +116,17 @@ class WganEpochTrainer(GanEpochTrainer):
         return self.loss_arr
 
     def train_epoch(self, gan_model: GAN,
-                    train_dataset: torch.utils.data.Dataset, val_dataset: torch.utils.data.Dataset,
+                    train_dataset: torch.utils.data.Dataset,
                     generator_stepper: Stepper, critic_stepper: Stepper,
-                    logger: Optional[GANLogger] = None,
-                    regularizer: Optional[Regularizer] = None) -> None:
+                    logger: Optional[GANLogger] = None) -> None:
+        # даталоадер для генератора (задаёт длину эпохи)
         dataloader = torch.utils.data.DataLoader(
             train_dataset,
             batch_size=self.batch_size,
             collate_fn=collate_fn,
             shuffle=True
         )
+        # даталоадер для критика
         random_dataloader = get_random_infinite_dataloader(
             train_dataset,
             batch_size=self.batch_size,
@@ -147,12 +134,12 @@ class WganEpochTrainer(GanEpochTrainer):
         )
         random_dataloader_iter = iter(random_dataloader)
 
+        # берёт батч, в генератор отдаёт condition (gen_batch_y), получает распределение (gen_batch_x)
         def get_batches(real_batch) -> Tuple[torch.Tensor, torch.Tensor, Any, Any]:
             real_batch_x, real_batch_y = move_batch_to(real_batch, get_local_device())
             gen_batch_y = real_batch_y
             noise_batch_z = gan_model.gen_noise(len(real_batch_x)).to(get_local_device())
             gen_batch_x = gan_model.generator(noise_batch_z, gen_batch_y).to(get_local_device())
-
             return gen_batch_x, real_batch_x, gen_batch_y, real_batch_y
 
         critic_adv_loss_total = 0.
@@ -163,15 +150,12 @@ class WganEpochTrainer(GanEpochTrainer):
         gen_sparsity_loss_total = 0.
         gen_layer_fraction_loss_total = 0.
         gen_quantile_loss_total = 0.
-        regularizer_loss_total = 0.
         disc_grad_norm_total = 0.
         gen_grad_norm_total = 0.
 
-        last_disc_real_vals = None
-        last_disc_gen_vals = None
-
         for batch_index, generator_batch in enumerate(tqdm(dataloader)):
             
+            # не хотим, чтобы градиенты считались для генератора, т. к. мы будем обновлять сейчас дискриминатор
             gan_model.generator.requires_grad_(False)
 
             for t in range(self.n_critic):
@@ -191,26 +175,9 @@ class WganEpochTrainer(GanEpochTrainer):
                 loss = - (disc_real_vals - disc_gen_vals).mean()
                 critic_adv_loss_total += loss.item() * len(gen_batch_x)
 
-                if regularizer is not None:
-                    regularizer_loss = regularizer()
-                    regularizer_loss_total += regularizer_loss.item()
-
-                    if logger is not None:
-                        logger.log_metrics(
-                            data={
-                                'train/discriminator/pure_loss': loss.item(),
-                                'train/discriminator/reg_loss': regularizer_loss.item()
-                            },
-                            period='disc_batch',
-                            period_index=self.disc_batch_cnt,
-                            commit=False
-                        )
-
-                    loss += regularizer_loss
-
                 loss.backward()
 
-                disc_grad_norm = calc_grad_norm(gan_model.discriminator)
+                disc_grad_norm = calc_grad_norm(gan_model.discriminator) # L2-норма
                 disc_grad_norm_total += disc_grad_norm
 
                 if logger is not None:
@@ -251,64 +218,27 @@ class WganEpochTrainer(GanEpochTrainer):
                 - gan_model.discriminator(gen_batch_x, gen_batch_y)
             )
 
-            adv_gen_loss = observations.mean()
+            adv_gen_loss = observations.mean() # состязательный loss генератора
 
             fake_energy = gen_batch_x.sum(dim=tuple(range(1, gen_batch_x.ndim)))
             real_energy = real_batch_x.sum(dim=tuple(range(1, real_batch_x.ndim)))
 
 
-            energy_loss = torch.mean((fake_energy - real_energy) ** 2)
+            energy_loss = torch.mean((fake_energy - real_energy) ** 2) # суммарная энергия правдоподобная для каждого конкретного примера
 
-            sparsity_loss = gen_batch_x.abs().mean()
-            layer_frac_loss = layer_fraction_loss(real_batch_x, gen_batch_x)
-            quantile_loss = quantile_energy_loss(real_batch_x, gen_batch_x)
+            sparsity_loss = gen_batch_x.abs().mean() # sparsity = разреженность. отвечает за то, чтобы энергия была сконцентрирована в одном месте, а не размазана по всему калориметру
+            # уменьшаем sparsity_loss => одинаково уменьшаем модуль каждого числа => маленькие числа превращаются в 0
+            layer_frac_loss = layer_fraction_loss(real_batch_x, gen_batch_x) # распределение энергии по слоям правдоподобное для конкретного примера
+            quantile_loss = quantile_energy_loss(real_batch_x, gen_batch_x) # распределение энергии = какой процент примеров из датасета имеет маленькую/среднюю/большую энергию?
+            # есть настоящее распределение (20%/60%/20%) и мы его приблежаем. для этого приблежаем распределение энергии к настоящему в каждом батче
 
-            gen_loss = (
+            gen_loss = ( # общий loss генератора
                 adv_gen_loss
                 + self.lambda_energy * energy_loss
                 + self.lambda_sparsity * sparsity_loss
                 + self.lambda_layer_fraction * layer_frac_loss
                 + self.lambda_quantile * quantile_loss
             )
-            if batch_index % self.debug_every == 0:
-                print("\n=== ENERGY DEBUG ===")
-                print("batch_index:", batch_index)
-                print("real energy min/mean/max:",
-                      real_energy.min().item(),
-                      real_energy.mean().item(),
-                      real_energy.max().item())
-                print("fake energy min/mean/max:",
-                      fake_energy.min().item(),
-                      fake_energy.mean().item(),
-                      fake_energy.max().item())
-                print("real abs mean:", real_batch_x.abs().mean().item())
-                print("fake abs mean:", gen_batch_x.abs().mean().item())
-
-                print("real nonzero ratio:",
-                      (real_batch_x.abs() > 1e-6).float().mean().item())
-                print("fake nonzero ratio:",
-                      (gen_batch_x.abs() > 1e-6).float().mean().item())
-
-                print("\n=== ENERGY LOSS DEBUG ===")
-                print("adv_gen_loss:", adv_gen_loss.item())
-                print("energy_loss:", energy_loss.item())
-                print("lambda_energy:", self.lambda_energy)
-                print("lambda_energy * energy_loss:",
-                      (self.lambda_energy * energy_loss).item())
-                print("sparsity_loss:", sparsity_loss.item())
-                print("lambda_sparsity:", self.lambda_sparsity)
-                print("lambda_sparsity * sparsity_loss:",
-                      (self.lambda_sparsity * sparsity_loss).item())
-                print("layer_frac_loss:", layer_frac_loss.item())
-                print("lambda_layer_fraction:", self.lambda_layer_fraction)
-                print("lambda_layer_fraction * layer_frac_loss:",
-                      (self.lambda_layer_fraction * layer_frac_loss).item())
-                print("quantile_loss:", quantile_loss.item())
-                print("lambda_quantile:", self.lambda_quantile)
-                print("lambda_quantile * quantile_loss:",
-                      (self.lambda_quantile * quantile_loss).item())
-                print("gen_loss total:", gen_loss.item())
-
             self.gen_batch_cnt += 1
 
             gen_adv_loss_total += adv_gen_loss.item() * len(gen_batch_x)
@@ -316,25 +246,6 @@ class WganEpochTrainer(GanEpochTrainer):
             gen_sparsity_loss_total += sparsity_loss.item() * len(gen_batch_x)
             gen_layer_fraction_loss_total += layer_frac_loss.item() * len(gen_batch_x)
             gen_quantile_loss_total += quantile_loss.item() * len(gen_batch_x)
-
-            if regularizer is not None:
-                regularizer_loss = regularizer()
-                regularizer_loss_total += regularizer_loss.item()
-
-                if logger is not None:
-                    logger.log_metrics(
-                        data={
-                            'train/generator/pure_loss': adv_gen_loss.item(),
-                            'train/generator/energy_loss': energy_loss.item(),
-                            'train/generator/reg_loss': regularizer_loss.item()
-                        },
-                        period='gen_batch',
-                        period_index=self.gen_batch_cnt,
-                        commit=False
-                    )
-
-                gen_loss += regularizer_loss
-                regularizer.step()
 
             gen_loss_total += gen_loss.item() * len(gen_batch_x)
 
@@ -378,30 +289,11 @@ class WganEpochTrainer(GanEpochTrainer):
                     commit=True
                 )
 
-        generator_stepper.epoch_finished()
-        critic_stepper.epoch_finished()
-
         if logger is not None:
-            if generator_stepper.scheduler is not None:
-                generator_lr = generator_stepper.scheduler.get_last_lr()
-                logger.log_metrics(
-                    data={'generator/lr': generator_lr},
-                    period='epoch',
-                    commit=False
-                )
-
-            if critic_stepper.scheduler is not None:
-                critic_lr = critic_stepper.scheduler.get_last_lr()
-                logger.log_metrics(
-                    data={'critic/lr': critic_lr},
-                    period='epoch',
-                    commit=False
-                )
-
             logger.log_metrics(
                 data={
                     'train/critic/loss': critic_loss_total / len(train_dataset),
-                    'train/critic/adv_loss': critic_adv_loss_total / len(train_dataset),
+                    'train/critic/adv_loss': critic_adv_loss_total / len(train_dataset), # в 5 раз больше нужного
                     'train/generator/loss': gen_loss_total / len(train_dataset),
                     'train/generator/adv_loss': gen_adv_loss_total / len(train_dataset),
                     'train/generator/energy_loss': gen_energy_loss_total / len(train_dataset),
@@ -419,9 +311,6 @@ class WganEpochTrainer(GanEpochTrainer):
                     'train/generator/quantile_loss': gen_quantile_loss_total / len(train_dataset),
                     'train/generator/weighted_quantile_loss': (
                         self.lambda_quantile * gen_quantile_loss_total / len(train_dataset)
-                    ),
-                    'train/regularizer/loss': regularizer_loss_total / (
-                        len(dataloader) * (self.n_critic + 1)
                     ),
                     'train/discriminator/grad_norm': disc_grad_norm_total / (
                         len(dataloader) * self.n_critic
@@ -446,35 +335,6 @@ class WganEpochTrainer(GanEpochTrainer):
 
         avg_wd = -avg_loss_d
 
-        print(f"  Средний loss критика: {avg_loss_d:.4f}")
-        print(f"  Средний loss генератора: {avg_loss_g:.4f}")
-        print(f"  Средний adv loss генератора: {avg_adv_g:.4f}")
-        print(f"  Средний energy loss генератора: {avg_energy_loss:.4f}")
-        print(f"  Средний weighted energy loss генератора: {avg_weighted_energy_loss:.4f}")
-        print(f"  Средний sparsity loss генератора: {avg_sparsity_loss:.4f}")
-        print(f"  Средний weighted sparsity loss генератора: {avg_weighted_sparsity_loss:.4f}")
-        print(f"  Средний layer fraction loss генератора: {avg_layer_fraction_loss:.4f}")
-        print(f"  Средний weighted layer fraction loss генератора: {avg_weighted_layer_fraction_loss:.4f}")
-        print(f"  Средний quantile loss генератора: {avg_quantile_loss:.4f}")
-        print(f"  Средний weighted quantile loss генератора: {avg_weighted_quantile_loss:.4f}")
-        print(f"  Grad norm критика: {disc_grad_norm_total / (len(dataloader) * self.n_critic):.4f}")
-        print(f"  Grad norm генератора: {gen_grad_norm_total / len(dataloader):.4f}")
-
-        if last_disc_real_vals is not None and last_disc_gen_vals is not None:
-            print(f"  D(real) среднее: {last_disc_real_vals.mean().item():.4f}")
-            print(f"  D(fake) среднее: {last_disc_gen_vals.mean().item():.4f}")
-
-        print(f"  loss: {avg_wd:.4f}")
-
-        
-def fill_result(result: Result, metric_names: List, metric_values: List):
-    for metric_name, metric_value in zip(metric_names, metric_values):
-        if isinstance(metric_name, List):
-            fill_result(result, metric_name, metric_value)
-        else:
-            result.add_metric(metric_name, value=metric_value)
-
-
 class GanTrainer:
     def __init__(self, model_dir: ModelDir, save_checkpoint_once_in_epoch: int = 1,
                  use_saved_checkpoint: bool = True) -> None:
@@ -489,11 +349,8 @@ class GanTrainer:
               n_epochs: int = 100,
               metric: Optional[Metric] = None,
               metric_predicate: Optional[TrainPredicate] = None,
-              logger_cm_fn: Optional[Callable[[], ContextManager[GANLogger]]] = None,
-              regularizer: Optional[Regularizer] = None,
-              normalization_loss: Optional[Callable] = None,
-              result_metrics: Optional[Tuple[List, MetricsSequence]] = None,
-              results_info: Optional[ExperimentInfo] = None) -> Generator[Tuple[int, GAN], None, GAN]:
+              logger_cm_fn: Optional[Callable[[], ContextManager[GANLogger]]] = None
+              ) -> Generator[Tuple[int, GAN], None, GAN]:
         gan_model.to(get_local_device())
         inverse_to_initial_domain_fn = getattr(train_dataset, 'inverse_transform', None)
         epoch = 1
@@ -520,11 +377,9 @@ class GanTrainer:
                 epoch_trainer.train_epoch(
                     gan_model=gan_model,
                     train_dataset=train_dataset,
-                    val_dataset=val_dataset,
                     generator_stepper=generator_stepper,
                     critic_stepper=critic_stepper,
-                    logger=logger,
-                    regularizer=regularizer
+                    logger=logger
                 )
 
                 if logger is not None:
@@ -558,17 +413,5 @@ class GanTrainer:
                     self.model_dir.save_checkpoint_state(checkpoint)
 
                 yield epoch, gan_model
-
-        if result_metrics is not None and results_info is not None:
-            result = results_info.get_result()
-            metrics_values = result_metrics[1](
-                gan_model=gan_model,
-                train_dataset=train_dataset,
-                val_dataset=val_dataset,
-                inverse_to_initial_domain_fn=inverse_to_initial_domain_fn
-            )
-            print(metrics_values)
-            fill_result(result, result_metrics[0], metrics_values)
-            results_info.save_result(result)
 
         return gan_model

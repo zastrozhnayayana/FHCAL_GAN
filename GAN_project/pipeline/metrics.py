@@ -2,7 +2,6 @@ from abc import abstractmethod
 from typing import Optional, Tuple, Any, Generator, Iterable, Union, Dict, Callable
 
 import numpy as np
-import pandas as pd
 import torch
 import torch.utils.data
 from matplotlib import pyplot as plt
@@ -11,7 +10,6 @@ from tqdm import tqdm
 from pipeline.data import collate_fn, move_batch_to, stack_batches
 from pipeline.device import get_local_device
 from pipeline.gan import GAN
-from pipeline.normalization import WeakSpectralNormalizer
 from pipeline.physical_metrics import calogan_metrics, calogan_prd
 from pipeline.physical_metrics.calogan_prd import plot_pr_aucs, get_energy_embedding
 
@@ -62,67 +60,6 @@ class Metric:
 
 
 # метрика, которая анализирует GAN, и не анализирует данные
-class ModelMetric(Metric):
-    def prepare_args(self, **kwargs):
-        kwargs = super().prepare_args(**kwargs) # было бы полезно, если у меня было что-то написано в prepare_args в надклассе
-
-        return {
-            'gan_model': kwargs['gan_model']
-        }
-
-# Классы для метрик, которые следят за аттрибутами генератора и дискриминатора
-class GeneratorAttributeMetric(ModelMetric):
-    def __init__(self, attr_name: str):
-        self.attr_name = attr_name
-        self.NAME = f'generator.{attr_name}'
-
-    def evaluate(self, gan_model, *args, **kwargs) -> float:
-        generator = gan_model.generator
-        return getattr(generator, self.attr_name)
-
-
-class DiscriminatorAttributeMetric(ModelMetric):
-    def __init__(self, attr_name: str):
-        self.attr_name = attr_name
-        self.NAME = f'critic.{attr_name}'
-
-    def evaluate(self, gan_model, *args, **kwargs) -> float:
-        discriminator = gan_model.discriminator
-        return getattr(discriminator, self.attr_name)
-
-# Классы для метрик, которые следят за параметрами генератора и дискриминатора
-class GeneratorParameterMetric(ModelMetric):
-    def __init__(self, attr_name: str):
-        self.attr_name = attr_name
-        self.NAME = f'generator.{attr_name}'
-
-    def evaluate(self, gan_model, *args, **kwargs) -> float:
-        generator = gan_model.generator
-        return getattr(generator, self.attr_name).data
-
-
-class DiscriminatorParameterMetric(ModelMetric):
-    def __init__(self, attr_name: str):
-        self.attr_name = attr_name
-        self.NAME = f'critic.{attr_name}'
-
-    def evaluate(self, gan_model, *args, **kwargs) -> float:
-        discriminator = gan_model.discriminator
-        return getattr(discriminator, self.attr_name).data
-
-
-class BetaMetric(ModelMetric):
-    NAME = 'beta'
-
-    def evaluate(self, gan_model, *args, **kwargs) -> float:
-        discriminator = gan_model.discriminator
-        # пока только для одного beta
-        if isinstance(discriminator, WeakSpectralNormalizer):
-            return discriminator.beta.data.item()
-        else:
-            return 1.
-
-
 def generate_data(gan_model: GAN, dataloader: torch.utils.data.DataLoader,
                   gen_size: Optional[int] = None) -> Generator:
     """
@@ -289,58 +226,6 @@ class CriticValuesDistributionMetric(DataMetric):
 
 
 # статистики значений дискриминатора (для дебага при падении во время обучении)
-class CriticValuesStats(DataMetric):
-    def __init__(self, values_cnt: int):
-        super().__init__(initial_domain_data=False,
-                         val_data_size=values_cnt,
-                         gen_data_size=values_cnt,
-                         cache_val_data=False,
-                         shuffle_val_dataset=True,
-                         return_as_batches=True)
-
-    def evaluate(self, gan_model: GAN, gen_data, val_data, **kwargs) -> Tuple[Dict, Dict]:
-        """
-        :return: {min, max, mean} for validation data, {min, max, mean} for generated data
-        """
-        res = []
-        for data in (val_data, gen_data):
-            all_critic_vals = []
-            with torch.no_grad():
-                for batch in data:
-                    batch_x, batch_y = move_batch_to(batch, get_local_device())
-                    critic_vals = gan_model.discriminator(batch_x, batch_y)
-                    all_critic_vals.append(critic_vals)
-            all_critic_vals = torch.cat(all_critic_vals)
-            stats = {
-                'min': all_critic_vals.min().item(),
-                'max': all_critic_vals.max().item(),
-                'mean': all_critic_vals.mean().item(),
-            }
-            res.append(stats)
-        return tuple(res)
-
-
-class GeneratorValuesStats(DataMetric):
-    def __init__(self, values_cnt: int):
-        super().__init__(initial_domain_data=False,
-                         val_data_size=values_cnt,
-                         gen_data_size=values_cnt,
-                         cache_val_data=False,
-                         shuffle_val_dataset=True,
-                         return_as_batches=False)
-
-    def evaluate(self, gan_model: GAN, gen_data, val_data, **kwargs) -> Dict:
-        """
-        :return: {min, max, mean} for generated data
-        """
-        stats = {
-            'min': gen_data[0].min().item(),
-            'max': gen_data[0].max().item(),
-            'mean': gen_data[0].mean().item(),
-        }
-        return stats
-
-
 class DataStatistic(DataMetric):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -627,55 +512,6 @@ class ConditionBinsMetric(Metric):
             return y
 
 
-def _split_into_bins(bins, vals):
-    """
-    return densities of shape (len(bins) + 1,)
-    """
-    bin_indices = np.searchsorted(bins, vals)
-    unique_vals, cnts = np.unique(bin_indices, return_counts=True)
-    all_cnts = np.zeros(len(bins) + 1)
-    all_cnts[unique_vals] = cnts
-
-    return all_cnts / len(vals)
-
-
-def _kl_div(true_probs, fake_probs):
-    """
-    true_probs, fake_probs must be of the same size.
-    They are assumed to be probabilities of some discrete random variables
-    return KL(true || fake)
-    """
-    calc_indices = true_probs != 0
-    if (fake_probs[calc_indices] == 0.).any():
-        return np.inf
-    else:
-        return (true_probs[calc_indices] * np.log(true_probs[calc_indices] / fake_probs[calc_indices])).mean()
-
-
-class KLDivergence(DataStatistic):
-    NAME = 'KL Divergence'
-
-    def __init__(self, statistic: DataStatistic, bins_cnt: int = 10):
-        super().__init__()
-        self.statistic = statistic
-        self.bins_cnt = bins_cnt
-        self.NAME = self.NAME + ' of ' + statistic.NAME
-
-    def evaluate(self, gen_data: Any,
-                 val_data: Optional[Any] = None,
-                 **kwargs):
-        """
-        делим val_samples на bin-ы по квантилям и считаем, что влево и вправо на бесконечности уходят по ещё одному bin-у
-        затем по дискретизированным согласно этим bin-ам величинам считаем дивергенцию
-        """
-        gen_samples, val_samples = self.statistic.evaluate(gen_data=gen_data, val_data=val_data)
-        _, bins = pd.qcut(np.hstack(gen_samples), q=self.bins_cnt, retbins=True)
-
-        val_probs = _split_into_bins(bins, val_samples)
-        gen_probs = _split_into_bins(bins, gen_samples)
-        return _kl_div(true_probs=val_probs, fake_probs=gen_probs)
-
-
 def _unravel_metric_results(unraveled: Dict[str, Any], metric: Metric, results) -> None:
     if isinstance(metric, MetricsSequence):
         for metric, res in zip(metric, results):
@@ -700,14 +536,10 @@ __all__ = ['Metric', 'CriticValuesDistributionMetric',
            'LongitudualClusterAsymmetryMetric', 'TransverseClusterAsymmetryMetric',
            'ClusterLongitudualWidthMetric', 'ClusterTransverseWidthMetric',
            'PhysicsPRDMetric', 'PhysicsDataStatistics', 'PhysicsDataStatistic',
-           'KLDivergence',
            'MetricsSequence',
            'AveragePRDAUCMetric',
            'unravel_metric_results',
            'ConditionBinsMetric',
            'TransformData',
            'DataStatisticsCombiner',
-           'PHYS_STATISTICS',
-           'BetaMetric', 'DiscriminatorParameterMetric', 'GeneratorParameterMetric',
-           'GeneratorAttributeMetric', 'DiscriminatorAttributeMetric',
-           'CriticValuesStats', 'GeneratorValuesStats']
+           'PHYS_STATISTICS']

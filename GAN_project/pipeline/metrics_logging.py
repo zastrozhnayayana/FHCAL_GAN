@@ -1,9 +1,8 @@
 """A bridge between metrics and logger"""
 from dataclasses import dataclass
-from typing import Any, Union, Tuple, Optional, Dict, Type
+from typing import Any, Tuple, Optional, Dict, Type
 
 import numpy as np
-import torch
 
 from pipeline.logger import GANLogger
 from pipeline.metrics import *
@@ -66,9 +65,6 @@ def log_metric(metric: Metric, results: Any, logger: GANLogger, period: str, per
         critic_vals_gen: np.ndarray
         critic_vals_true, critic_vals_gen = results
         logger.log_critic_values_distribution(critic_vals_true, critic_vals_gen, period=period, period_index=period_index)
-    elif isinstance(metric, DataStatistics):
-        for statistic, res in zip(metric.statistics, results):
-            log_metric(statistic, res, logger, period=period, period_index=period_index)
     elif isinstance(metric, ConditionBinsMetric):
         metric_name = metric.metric.NAME
         for bin_i, value in enumerate(results):
@@ -95,39 +91,5 @@ def log_metric(metric: Metric, results: Any, logger: GANLogger, period: str, per
                                     period_index=period_index)
         else:
             raise NotImplementedError  # currently, all DataStatistic-s return samples from a distribution
-    elif isinstance(metric, BetaMetric):
-        logger.log_metrics(data={metric.NAME: results}, period=period, period_index=period_index, commit=False)
-    elif isinstance(metric, DiscriminatorParameterMetric) or isinstance(metric, GeneratorParameterMetric) or \
-         isinstance(metric, DiscriminatorAttributeMetric) or isinstance(metric, GeneratorAttributeMetric):
-
-        if isinstance(results, np.ndarray) or isinstance(results, torch.Tensor):
-            results = results.tolist()
-            if isinstance(results, list) and len(results) == 1:
-                results = results[0]
-
-        try:  # if iterable
-            data = {}
-            for i, val in enumerate(results):
-                data[f'{metric.NAME}[{i}]'] = val
-        except TypeError:
-            data = {metric.NAME: results}
-
-        if metric.NAME.endswith('coefs'):
-            data[metric.NAME + ' prod'] = np.prod(results)
-
-        logger.log_metrics(data=data, period=period, period_index=period_index, commit=False)
-    elif isinstance(metric, CriticValuesStats) or isinstance(metric, GeneratorValuesStats):
-        if isinstance(metric, CriticValuesStats):
-            part = 'discriminator'
-            prefixes = ['val', 'gen']
-        else:
-            part = 'generator'
-            prefixes = ['gen']
-            results = (results,)
-        data = {}
-        for stats, prefix in zip(results, prefixes):
-            for stat_name, stat_val in stats.items():
-                data[f'train/{part}/{prefix}_{stat_name}'] = stat_val
-        logger.log_metrics(data=data, period=period, period_index=period_index, commit=False)
     else:
         raise NotImplementedError(f'Metric "{type(metric)}" is not supported for logging')
